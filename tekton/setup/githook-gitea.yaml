@@ -1,0 +1,21 @@
+apiVersion: tools.pongzt.com/v1alpha1
+kind: GitHook
+metadata:
+  name: githook-sample
+spec:
+  gitProvider: gogs 
+  eventTypes:
+  - push
+  projectUrl: "https://git.nerdrack.com/da3dalus/robertIP"
+  accessToken:
+    secretKeyRef:
+      name: gitsecret
+      key: accessToken
+  secretToken:
+    secretKeyRef:
+      name: gitsecret
+      key: secretToken
+  runspec:
+    pipelineRef:
+      name: simple-pipeline
+    serviceAccount: default

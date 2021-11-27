@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-dns-prod
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: mfish551.mf@gmail.com
+    privateKeySecretRef:
+      name: letsencrypt-dns-prod
+    solvers:
+    - dns01:
+        clouddns:
+          serviceAccountSecretRef:
+              name: clouddns
+              key: clouddns.key.json
+          project: nerd-rack-01142020

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: resolv-conf
+  labels:
+    app: gitea
+data:
+  resolv.conf: |
+    search gitea.svc.cluster.local svc.cluster.local cluster.local us-west1-c.c.mastodon-pos.internal c.mastodon-pos.internal google.internal
+    nameserver 10.32.0.10
+    nameserver 8.8.8.8

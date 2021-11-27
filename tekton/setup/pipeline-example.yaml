@@ -1,0 +1,33 @@
+# Task writes "some stuff" to a predefined path in the workspace git PipelineResource
+apiVersion: tekton.dev/v1alpha1
+kind: Task
+metadata:
+  name: simple-task
+spec:
+  inputs:
+    resources:
+      - name: git-source
+        type: git
+  steps:
+  - name: print-hello
+    image: busybox
+    command: ["/bin/sh"]
+    args: ['-c', 'echo "Hellow from tekton pipeline"']
+
+---
+apiVersion: tekton.dev/v1alpha1
+kind: Pipeline
+metadata:
+  name: simple-pipeline
+spec:
+  resources:
+  - name: git-source
+    type: git
+  tasks:
+  - name: simple-task
+    taskRef:
+      name: simple-task
+    resources:
+      inputs:
+        - name: git-source
+          resource: git-source

@@ -1,0 +1,12 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: jenkins-home
+spec:
+  storageClassName: ssd-save
+  volumeType: gce-pd
+  capacity:
+    storage: 10Gi
+  persistentVolumeReclaimPolicy: Retain
+  accessModes:
+    - ReadWriteOnce

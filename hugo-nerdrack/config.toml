@@ -1,0 +1,48 @@
+baseURL = "https://nerdrack.com/"
+languageCode = "en-us"
+title = "Nerdrack as a Solution"
+theme = "hugo-uno"
+contentdir = "content"
+publishdir = "public"
+builddrafts = false
+canonifyurls = true
+author = "Nerdrack Authors"
+copyright = "Nerdrack 2019"
+pygmentsCodeFences = true
+pygmentsCodeFencesGuessSyntax = true
+pygmentsStyle = "native"
+
+[indexes]
+  category = "categories"
+  tag = "tags"
+[Params]
+  AuthorName = "Matt"
+  description = ""
+  logo = "/images/logo-1.png"
+  cover = "/images/background-cover.jpg"
+  email = "mfish551.mf@gmail.com"
+  gitea = "https://git.nerdrack.com"
+  disqus = "nerdrack.com"
+ 
+    [Params.Sharing]
+
+      [[Params.Sharing.list]]
+     
+        link = "mailto:mfish551.mf@gmail.com"
+        class = "envelope"
+        title = ""
+        name = "email"
+
+    [[Params.Sharing.list]]
+        link = "#!"
+        class = "linkedin"
+        title = "test"
+        name = "linkedin"
+    
+    [[Params.Sharing.list]]
+       
+        link = "https://git.nerdrack.com"
+        class = "git"
+        title = "we host our own repos"
+        name = "gitea"
+

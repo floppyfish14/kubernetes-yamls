@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: hugo
+spec:
+  selector:
+    app: hugo
+  ports:
+  - name: hugo
+    port: 8080
+    targetPort: 8080

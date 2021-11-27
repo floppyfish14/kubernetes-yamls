@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-dns-staging
+spec:
+  acme:
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    email: mfish551.mf@gmail.com
+    privateKeySecretRef:
+      name: letsencrypt-dns-staging
+    solvers:
+    - dns01:
+        clouddns:
+          serviceAccountSecretRef:
+              name: clouddns
+              key: clouddns.key.json
+          project: nerd-rack-01142020

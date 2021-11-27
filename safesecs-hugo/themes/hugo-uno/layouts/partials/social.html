@@ -1,0 +1,12 @@
+<nav class="cover-navigation navigation--social">
+      {{ if .Site.Params.Sharing }}
+        <ul class="navigation">
+        {{ range .Site.Params.Sharing.List }}
+        <li class="navigation__item">
+            <a href="{{ .link }}" title="{{ .title }}"> <i class="fa fa-{{ .class }}"></i>
+              <span class="label">{{ .name }}</span></a>
+        </li>
+        {{ end }}
+        </ul>
+      {{ end }}
+</nav>

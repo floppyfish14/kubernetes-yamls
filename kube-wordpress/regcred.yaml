@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: regcred
+type: Opaque
+data:
+  username: ZGEzZGFsdXMK
+  password: YmFsbGVyLTQxOTExMAo=
+  email: bWZpc2g1NTEubWZAZ21haWwuY29tCg==

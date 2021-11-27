@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql
+  labels:
+    app: wordpress-mysql
+data:
+  bind.cnf: |
+    [mysqld]
+    bind-address = *
+    datadir=/var/lib/mysql/data

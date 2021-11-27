@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "nerdrack-dev",
+  "private_key_id": "eff414260c0cb5fcaabb2c774c889a6b120336e5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC5ePBexGU3+vk4\nA/CIe+eFnmhxKnhNBTXfdGufcWoQwLgS3SGQx0CRJ0DYUt2qpOwDBOz/bfGHLBsV\nuTzOQFxGry/vHy6dzU6e69wOIWpARBAdW9zj5DQCBPgsVHHNfEACklr/XJ4g5O2i\nK9zif7+ZWO2uwefFQKYfgtUfnq33Mu42bVg4k7L0kXza5TDFyAqiqy3rPQaX4g0G\ny5nmAZzymXrMSGNF7aGJS2tW8uhsWXeanupX5TJLaaHTqUBcapnHDN3EgDCKt8Bl\nP7dI4KgtAG4t9VdYrv96F19FWSDl6f65YHeGKCvqP/oAWAr4WcToi3uU5iJTd4GD\nf1jxh5x1AgMBAAECggEARNuUiepqFbV0jwpPY6x0kRP1fIYi8Z1MmfA0AJbvpNaX\nwFEepAyFeR5UobtqFm9yO9C5WD9uGxwR1ifWXlBgsdFaf3FZMjbFyJSSNyDKvJ9I\nSE4RnP3dHR7RMEwNkBdgAFRrukCdaGL1om6ca+63qGvumiHdNUtCIZLGIx4bQhmh\nHkTqjJ1EcKb9sBSV+VN+ZJ8hW+hRGT5pk9k/iNCv5GTLwIaN3QWDfLUstzLfM2cK\nKWb51t+QuJ3i4oxq5lNpxk1YDyvb3VPVsdcXTi+RQudC6LIStOTd+zinLt7H+j/k\nTFnAKtUYZyhpJY3kfq8ol0ah0paBKhsjXpehevReJQKBgQDtBTNgeNn9gUTM6xaa\n+CSBbT6AfbwjcN1L674Zm4933imKL/9XB6PnAJvhDEpzGFistQxHZiICrqKnmRDg\nu3zIXRNh7cOwkBpoROU7Y2mK+C9RE3NHOg7QMAiBr9pStYPrhVmvBQ+1GKhsTP1t\nk9k69sck4Sr2I8oo3533BatxiwKBgQDIUwgmbXAxsJVFmuqKVfDPKlGbDoSszXw6\nfXkkpbqD44PrNaTzFIjU41qAImgq2ooqphhErD4E1yJJ7NPDVWbmJ6qcQBQ6cKYL\nm0S+sd5xDDK5YXSByMubxrCT3/0DWqpKgIHWgJkpTcJEkMz+gB/1ZYBxKVZxG0XM\ncXi7/X7p/wKBgHPCfn03iQAPCpMqnjfBydKMkGIhBqoojWxvDsFjAIcCsjcTihnv\nWVWRLpCTeCkOUwDGy+BzOVkmAbrpPx0DdMZG7xh9D35EYyFZxLtkqj99R17JqRu4\nd1OmogD06iRLEssMreiVCD7idB+w2nWSKB5sOIcCkgD1Kd8cmAH1eu5RAoGAMu+p\n6tt446mayxARAwvHJ2YDSgHvCmFVbSnqW78oJdD8AhqpzoUyJa+Jm3skMYFQEHgb\nQ5roSiLJvTJSxiA5AdykLQa+Hf32uozIdhSUEvqfCzQUg8uiugFTdMZHd0recgMr\nAHfCehYjh3uqJCw/9A3TEvMH38qnfMx9fo9+bdECgYBPHJb7DfIJvtfzObkZjXQM\nOIgchxsorvDeOMeViiYnK7xIzhvf2M4kpB5SFH+PwdpoM2kRdq3UiVdZiD8dcywr\ng1InvUFYeDHV1gTtwZtsnQ9DzvDXGIWWgkwpep2VNQ+QoQtby4KLjrIHzdNu+TL3\nsPaFan0s1pyZ4w26WboxNQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "jenkins@nerdrack-dev.iam.gserviceaccount.com",
+  "client_id": "104014768387529096148",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/jenkins%40nerdrack-dev.iam.gserviceaccount.com"
+}

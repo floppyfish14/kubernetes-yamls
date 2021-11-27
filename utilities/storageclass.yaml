@@ -1,0 +1,45 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: standard
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-standard
+volumeBindingMode: WaitForFirstConsumer
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: standard-save
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "false"
+provisioner: kubernetes.io/gce-pd
+reclaimPolicy: Retain
+parameters:
+  type: pd-standard
+volumeBindingMode: WaitForFirstConsumer
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: ssd
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "false"
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-ssd
+volumeBindingMode: WaitForFirstConsumer
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: ssd-save
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "false"
+provisioner: kubernetes.io/gce-pd
+reclaimPolicy: Retain
+parameters:
+  type: pd-ssd
+volumeBindingMode: WaitForFirstConsumer

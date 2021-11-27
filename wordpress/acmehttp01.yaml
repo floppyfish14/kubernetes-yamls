@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: alphawolf-tls
+spec:
+  secretName: alphawolf-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: alphawolfbeard.com
+  dnsNames:
+  - alphawolfbeard.com
+  - www.alphawolfbeard.com
+  acme:
+    config:
+    - http01:
+        ingressClass: nginx
+      domains:
+      - alphawolfbeard.com
+      - www.alphawolfbeard.com

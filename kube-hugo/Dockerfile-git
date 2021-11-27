@@ -1,0 +1,4 @@
+From alpine:edge
+RUN apk add --update --no-cache \
+    git \
+    hugo

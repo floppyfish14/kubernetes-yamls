@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mastodon-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mastodon-redis
+  template:
+    metadata:
+      labels:
+        app: mastodon-redis
+    spec:
+      volumes:
+        - name: mastodon-redis-data
+          persistentVolumeClaim:
+            claimName: mastodon-redis
+      containers:
+        - name: redis
+          image: redis:4.0.10-alpine
+          resources:
+            requests:
+              memory: 64Mi
+              cpu: 50m
+          ports:
+            - containerPort: 6379
+          volumeMounts:
+            - name: mastodon-redis-data
+              mountPath: /data

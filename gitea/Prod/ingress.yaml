@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-gitea
+  annotations:
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: nginx
+    ingress.kubernetes.io/proxy-body-size: "150m"
+    nginx.org/client-max-body-size: "150m"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    ingress.kubernetes.io/backend-protocol: "HTTPS"
+    ingress.kubernetes.io/secure-backends: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: git.nerdrack.com 
+    http:
+      paths:
+      - backend:
+          serviceName: gitea-web
+          servicePort: 443
+  - host: nerdrack.com
+    http:
+      paths:
+      - backend:
+          serviceName: hugo
+          servicePort: 443
+  tls:
+  - hosts:
+    - git.nerdrack.com
+    - nerdrack.com
+    secretName: nerdrack-tls

@@ -1,0 +1,251 @@
+#apiVersion: v1
+#kind: ConfigMap
+#metadata:
+#  name: resolv-conf
+#  labels:
+#    app: jenkins
+#data:
+#  resolv.conf: |
+#    search jenkins.svc.cluster.local svc.cluster.local cluster.local us-west1-c.c.mastodon-pos.internal c.mastodon-pos.internal google.internal
+#    nameserver 10.32.0.10
+#    nameserver 8.8.8.8
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jenkins-config
+  labels:
+    app: jenkins
+data:
+  config.xml: |
+    <?xml version='1.1' encoding='UTF-8'?>
+    <hudson>
+      <disabledAdministrativeMonitors/>
+      <version>2.164.1</version>
+      <installStateName>RUNNING</installStateName>
+      <numExecutors>4</numExecutors>
+      <mode>NORMAL</mode>
+      <useSecurity>true</useSecurity>
+      <authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy">
+        <denyAnonymousReadAccess>true</denyAnonymousReadAccess>
+      </authorizationStrategy>
+      <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
+        <disableSignup>false</disableSignup>
+        <enableCaptcha>false</enableCaptcha>
+      </securityRealm>
+      <disableRememberMe>false</disableRememberMe>
+      <projectNamingStrategy class="jenkins.model.ProjectNamingStrategy$DefaultProjectNamingStrategy"/>
+      <workspaceDir>${JENKINS_HOME}/workspace/${ITEM_FULL_NAME}</workspaceDir>
+      <buildsDir>${ITEM_ROOTDIR}/builds</buildsDir>
+      <markupFormatter class="hudson.markup.EscapedMarkupFormatter"/>
+      <jdks/>
+      <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
+      <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
+      <clouds>
+        <org.csanchez.jenkins.plugins.kubernetes.KubernetesCloud plugin="kubernetes@1.14.9">
+          <name>kubernetes</name>
+          <defaultsProviderTemplate></defaultsProviderTemplate>
+          <templates>
+            <org.csanchez.jenkins.plugins.kubernetes.PodTemplate>
+              <inheritFrom></inheritFrom>
+              <name>jenkins-slave</name>
+              <namespace>jenkins</namespace>
+              <privileged>false</privileged>
+              <capOnlyOnAlivePods>false</capOnlyOnAlivePods>
+              <alwaysPullImage>false</alwaysPullImage>
+              <instanceCap>2147483647</instanceCap>
+              <slaveConnectTimeout>100</slaveConnectTimeout>
+              <idleMinutes>0</idleMinutes>
+              <activeDeadlineSeconds>0</activeDeadlineSeconds>
+              <label>jenkins-slave</label>
+              <nodeSelector></nodeSelector>
+              <nodeUsageMode>EXCLUSIVE</nodeUsageMode>
+              <customWorkspaceVolumeEnabled>false</customWorkspaceVolumeEnabled>
+              <workspaceVolume class="org.csanchez.jenkins.plugins.kubernetes.volumes.workspace.EmptyDirWorkspaceVolume">
+                <memory>false</memory>
+              </workspaceVolume>
+              <volumes/>
+              <containers>
+                <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
+                  <name>jenkins-slave</name>
+                  <image>jenkins/jnlp-slave</image>
+                  <privileged>false</privileged>
+                  <alwaysPullImage>true</alwaysPullImage>
+                  <workingDir>/home/jenkins</workingDir>
+                  <command>/bin/sh -c</command>
+                  <args>cat</args>
+                  <ttyEnabled>true</ttyEnabled>
+                  <resourceRequestCpu></resourceRequestCpu>
+                  <resourceRequestMemory></resourceRequestMemory>
+                  <resourceLimitCpu></resourceLimitCpu>
+                  <resourceLimitMemory></resourceLimitMemory>
+                  <envVars/>
+                  <ports/>
+                  <livenessProbe>
+                    <execArgs></execArgs>
+                    <timeoutSeconds>0</timeoutSeconds>
+                    <initialDelaySeconds>0</initialDelaySeconds>
+                    <failureThreshold>0</failureThreshold>
+                    <periodSeconds>0</periodSeconds>
+                    <successThreshold>0</successThreshold>
+                  </livenessProbe>
+                </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
+              </containers>
+              <envVars/>
+              <annotations/>
+              <imagePullSecrets/>
+              <nodeProperties/>
+              <yaml></yaml>
+              <podRetention class="org.csanchez.jenkins.plugins.kubernetes.pod.retention.Default"/>
+            </org.csanchez.jenkins.plugins.kubernetes.PodTemplate>
+          </templates>
+          <serverUrl>https://34.67.158.5</serverUrl>
+          <serverCertificate>LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURERENDQWZTZ0F3SUJBZ0lSQUt2eGQzZ0xpMEphbnRRb1lReFZMcVF3RFFZSktvWklodmNOQVFFTEJRQXcKTHpFdE1Dc0dBMVVFQXhNa1pEbG1aVEJrTnpjdE1HRmtOeTAwWldVMUxUaGhORFl0WldZeU56bGlZVEF3TlRNdwpNQjRYRFRFNU1EZ3dOakF5TURVMU1Wb1hEVEkwTURnd05EQXpNRFUxTVZvd0x6RXRNQ3NHQTFVRUF4TWtaRGxtClpUQmtOemN0TUdGa055MDBaV1UxTFRoaE5EWXRaV1l5TnpsaVlUQXdOVE13TUlJQklqQU5CZ2txaGtpRzl3MEIKQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBM2lqcUljRmZiREdUNEEreEdQV3dnMHhFVWREcStVNEZiWmE0WFhkMgpmRWYzYncvbDlNSWtyd2pXUC9mYnA2bSs1SGNNZ3RjdVZoekNDaWdFVzNEQUFGM0RtY1lpcXZ1U1pJek0zeGVoCmh2RWJPRXJzN0tJaEVoWDljWHdROEdBbDZJTXUwUk16NkJpNmJSZzVTOUZVK1NXRjJKSGlIM3ZIOFBXQnRmNVcKM3NZOGV3MUJSSU5mRlBmTy9GU1lJUFJKZVlrcnNsSjdJT2xQeCtMUDFGaHNQK0k4amlMV1Zva0VmVGpwdlY0RwpaUnJ0VjB4MlExOWdrU1FTQTdRUVg5YVhJcktsZTFVMkxLMWtmamE2Y2R1cG9oS25yZC9UUG5TTndMRW5TWFFMCklRVUJzdWovOGc2V3VrRkNwOHFvKzdheUhXOG9MejFpazBLRmdaUXRVcFFRR3dJREFRQUJveU13SVRBT0JnTlYKSFE4QkFmOEVCQU1DQWdRd0R3WURWUjBUQVFIL0JBVXdBd0VCL3pBTkJna3Foa2lHOXcwQkFRc0ZBQU9DQVFFQQpjbjVpbmN3MEVpd1JnRWc0ZXI2dGJhRmZtWUxNVzFRNVVGZlpnZUtPR2g2QWhlbHZYSlBKbngvNGZ4d2pvYWVMCittSkV3MFhTelJMRUMwMUluT1pLZk5telIvSS81RU5tT0lhZjlpRkMwU2I0TGhSQmVhSkhqMjFncnNRZ3VCN0gKUWczMEZMYmZRNFUySzZSSHNyY1FLWDNkRVFkTWdPbC9ZSjNCZCt6MUtDNW5TdDFOU0pMb1QwQXhaYys0SmJ4ZQpuZzltZ3BXUkx4RGY3L0FaM2UycmR4VGRaNWV6TjZBOTdMdytvTTgwMGdDRmdaeUszSzVxTWJKM1FZODdMVk9oCkJNVHE0UWhRcXNlZEpPU1pteGkzSlMzWmJXUHZHdzAwTHFOWHJRbm12M0d3ZERMSjFxYW8waDBhaDRjaXlGWjQKaXhOWkdHbXhPVGh1NTEybGQyNGhrZz09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K</serverCertificate>
+          <skipTlsVerify>true</skipTlsVerify>
+          <addMasterProxyEnvVars>false</addMasterProxyEnvVars>
+          <capOnlyOnAlivePods>false</capOnlyOnAlivePods>
+          <namespace>jenkins</namespace>
+          <jenkinsUrl>https://build.nerdrack.com</jenkinsUrl>
+          <credentialsId>kubeconfig</credentialsId>
+          <containerCap>10</containerCap>
+          <retentionTimeout>5</retentionTimeout>
+          <connectTimeout>5</connectTimeout>
+          <readTimeout>15</readTimeout>
+          <usageRestricted>false</usageRestricted>
+          <maxRequestsPerHost>32</maxRequestsPerHost>
+          <waitForPodSec>600</waitForPodSec>
+          <podRetention class="org.csanchez.jenkins.plugins.kubernetes.pod.retention.Never"/>
+        </org.csanchez.jenkins.plugins.kubernetes.KubernetesCloud>
+      </clouds>
+      <quietPeriod>5</quietPeriod>
+      <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
+      <views>
+        <hudson.model.AllView>
+          <owner class="hudson" reference="../../.."/>
+          <name>all</name>
+          <filterExecutors>false</filterExecutors>
+          <filterQueue>false</filterQueue>
+          <properties class="hudson.model.View$PropertyList"/>
+        </hudson.model.AllView>
+      </views>
+      <primaryView>all</primaryView>
+      <slaveAgentPort>50000</slaveAgentPort>
+      <label></label>
+      <nodeProperties/>
+      <globalNodeProperties/>
+    ~ $ cat config.xml
+    <?xml version='1.1' encoding='UTF-8'?>
+    <hudson>
+      <disabledAdministrativeMonitors/>
+      <version>2.164.1</version>
+      <installStateName>RUNNING</installStateName>
+      <numExecutors>4</numExecutors>
+      <mode>NORMAL</mode>
+      <useSecurity>true</useSecurity>
+      <authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy">
+        <denyAnonymousReadAccess>true</denyAnonymousReadAccess>
+      </authorizationStrategy>
+      <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
+        <disableSignup>false</disableSignup>
+        <enableCaptcha>false</enableCaptcha>
+      </securityRealm>
+      <disableRememberMe>false</disableRememberMe>
+      <projectNamingStrategy class="jenkins.model.ProjectNamingStrategy$DefaultProjectNamingStrategy"/>
+      <workspaceDir>${JENKINS_HOME}/workspace/${ITEM_FULL_NAME}</workspaceDir>
+      <buildsDir>${ITEM_ROOTDIR}/builds</buildsDir>
+      <markupFormatter class="hudson.markup.EscapedMarkupFormatter"/>
+      <jdks/>
+      <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
+      <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
+      <clouds>
+        <org.csanchez.jenkins.plugins.kubernetes.KubernetesCloud plugin="kubernetes@1.14.9">
+          <name>kubernetes</name>
+          <defaultsProviderTemplate></defaultsProviderTemplate>
+          <templates>
+            <org.csanchez.jenkins.plugins.kubernetes.PodTemplate>
+              <inheritFrom></inheritFrom>
+              <name>jenkins-slave</name>
+              <namespace>jenkins</namespace>
+              <privileged>false</privileged>
+              <capOnlyOnAlivePods>false</capOnlyOnAlivePods>
+              <alwaysPullImage>false</alwaysPullImage>
+              <instanceCap>2147483647</instanceCap>
+              <slaveConnectTimeout>100</slaveConnectTimeout>
+              <idleMinutes>0</idleMinutes>
+              <activeDeadlineSeconds>0</activeDeadlineSeconds>
+              <label>jenkins-slave</label>
+              <nodeSelector></nodeSelector>
+              <nodeUsageMode>EXCLUSIVE</nodeUsageMode>
+              <customWorkspaceVolumeEnabled>false</customWorkspaceVolumeEnabled>
+              <workspaceVolume class="org.csanchez.jenkins.plugins.kubernetes.volumes.workspace.EmptyDirWorkspaceVolume">
+                <memory>false</memory>
+              </workspaceVolume>
+              <volumes/>
+              <containers>
+                <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
+                  <name>jenkins-slave</name>
+                  <image>jenkins/jnlp-slave</image>
+                  <privileged>false</privileged>
+                  <alwaysPullImage>true</alwaysPullImage>
+                  <workingDir>/home/jenkins</workingDir>
+                  <command>/bin/sh -c</command>
+                  <args>cat</args>
+                  <ttyEnabled>true</ttyEnabled>
+                  <resourceRequestCpu></resourceRequestCpu>
+                  <resourceRequestMemory></resourceRequestMemory>
+                  <resourceLimitCpu></resourceLimitCpu>
+                  <resourceLimitMemory></resourceLimitMemory>
+                  <envVars/>
+                  <ports/>
+                  <livenessProbe>
+                    <execArgs></execArgs>
+                    <timeoutSeconds>0</timeoutSeconds>
+                    <initialDelaySeconds>0</initialDelaySeconds>
+                    <failureThreshold>0</failureThreshold>
+                    <periodSeconds>0</periodSeconds>
+                    <successThreshold>0</successThreshold>
+                  </livenessProbe>
+                </org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
+              </containers>
+              <envVars/>
+              <annotations/>
+              <imagePullSecrets/>
+              <nodeProperties/>
+              <yaml></yaml>
+              <podRetention class="org.csanchez.jenkins.plugins.kubernetes.pod.retention.Default"/>
+            </org.csanchez.jenkins.plugins.kubernetes.PodTemplate>
+          </templates>
+          <serverUrl>https://34.67.158.5</serverUrl>
+          <serverCertificate>LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURERENDQWZTZ0F3SUJBZ0lSQUt2eGQzZ0xpMEphbnRRb1lReFZMcVF3RFFZSktvWklodmNOQVFFTEJRQXcKTHpFdE1Dc0dBMVVFQXhNa1pEbG1aVEJrTnpjdE1HRmtOeTAwWldVMUxUaGhORFl0WldZeU56bGlZVEF3TlRNdwpNQjRYRFRFNU1EZ3dOakF5TURVMU1Wb1hEVEkwTURnd05EQXpNRFUxTVZvd0x6RXRNQ3NHQTFVRUF4TWtaRGxtClpUQmtOemN0TUdGa055MDBaV1UxTFRoaE5EWXRaV1l5TnpsaVlUQXdOVE13TUlJQklqQU5CZ2txaGtpRzl3MEIKQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBM2lqcUljRmZiREdUNEEreEdQV3dnMHhFVWREcStVNEZiWmE0WFhkMgpmRWYzYncvbDlNSWtyd2pXUC9mYnA2bSs1SGNNZ3RjdVZoekNDaWdFVzNEQUFGM0RtY1lpcXZ1U1pJek0zeGVoCmh2RWJPRXJzN0tJaEVoWDljWHdROEdBbDZJTXUwUk16NkJpNmJSZzVTOUZVK1NXRjJKSGlIM3ZIOFBXQnRmNVcKM3NZOGV3MUJSSU5mRlBmTy9GU1lJUFJKZVlrcnNsSjdJT2xQeCtMUDFGaHNQK0k4amlMV1Zva0VmVGpwdlY0RwpaUnJ0VjB4MlExOWdrU1FTQTdRUVg5YVhJcktsZTFVMkxLMWtmamE2Y2R1cG9oS25yZC9UUG5TTndMRW5TWFFMCklRVUJzdWovOGc2V3VrRkNwOHFvKzdheUhXOG9MejFpazBLRmdaUXRVcFFRR3dJREFRQUJveU13SVRBT0JnTlYKSFE4QkFmOEVCQU1DQWdRd0R3WURWUjBUQVFIL0JBVXdBd0VCL3pBTkJna3Foa2lHOXcwQkFRc0ZBQU9DQVFFQQpjbjVpbmN3MEVpd1JnRWc0ZXI2dGJhRmZtWUxNVzFRNVVGZlpnZUtPR2g2QWhlbHZYSlBKbngvNGZ4d2pvYWVMCittSkV3MFhTelJMRUMwMUluT1pLZk5telIvSS81RU5tT0lhZjlpRkMwU2I0TGhSQmVhSkhqMjFncnNRZ3VCN0gKUWczMEZMYmZRNFUySzZSSHNyY1FLWDNkRVFkTWdPbC9ZSjNCZCt6MUtDNW5TdDFOU0pMb1QwQXhaYys0SmJ4ZQpuZzltZ3BXUkx4RGY3L0FaM2UycmR4VGRaNWV6TjZBOTdMdytvTTgwMGdDRmdaeUszSzVxTWJKM1FZODdMVk9oCkJNVHE0UWhRcXNlZEpPU1pteGkzSlMzWmJXUHZHdzAwTHFOWHJRbm12M0d3ZERMSjFxYW8waDBhaDRjaXlGWjQKaXhOWkdHbXhPVGh1NTEybGQyNGhrZz09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K</serverCertificate>
+          <skipTlsVerify>true</skipTlsVerify>
+          <addMasterProxyEnvVars>false</addMasterProxyEnvVars>
+          <capOnlyOnAlivePods>false</capOnlyOnAlivePods>
+          <namespace>jenkins</namespace>
+          <jenkinsUrl>https://build.nerdrack.com</jenkinsUrl>
+          <credentialsId>kubeconfig</credentialsId>
+          <containerCap>10</containerCap>
+          <retentionTimeout>5</retentionTimeout>
+          <connectTimeout>5</connectTimeout>
+          <readTimeout>15</readTimeout>
+          <usageRestricted>false</usageRestricted>
+          <maxRequestsPerHost>32</maxRequestsPerHost>
+          <waitForPodSec>600</waitForPodSec>
+          <podRetention class="org.csanchez.jenkins.plugins.kubernetes.pod.retention.Never"/>
+        </org.csanchez.jenkins.plugins.kubernetes.KubernetesCloud>
+      </clouds>
+      <quietPeriod>5</quietPeriod>
+      <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
+      <views>
+        <hudson.model.AllView>
+          <owner class="hudson" reference="../../.."/>
+          <name>all</name>
+          <filterExecutors>false</filterExecutors>
+          <filterQueue>false</filterQueue>
+          <properties class="hudson.model.View$PropertyList"/>
+        </hudson.model.AllView>
+      </views>
+      <primaryView>all</primaryView>
+      <slaveAgentPort>50000</slaveAgentPort>
+      <label></label>
+      <nodeProperties/>
+      <globalNodeProperties/>

@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: hugo
+spec:
+  selector:
+    app: hugo
+  ports:
+  - name: hugo
+    port: 1776
+    targetPort: 1776
+    nodePort: 1776
+  type: NodePort

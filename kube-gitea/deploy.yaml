@@ -1,0 +1,61 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: gitea
+  namespace: gitea
+  labels:
+    name: gitea
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gitea
+  strategy:
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: gitea
+    spec:
+      # Initial rights settings when creating disk can be incorrect for the git user in the gitea container: Use init container to set the rights
+      initContainers:
+      - name: init-disk
+        image: busybox:latest
+        command: ["/bin/sh"] 
+        args: ["-c", "chown -R 1000:1000 /data && chmod -R ug+rw /data"]
+        volumeMounts:
+        - name: gitea
+          mountPath: "/data"
+          readOnly: false
+      containers:
+      - name: gitea
+        image: "gitea/gitea:latest"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 6443
+        - containerPort: 2222
+        - containerPort: 8080
+        volumeMounts:
+        - name: gitea
+          mountPath: "/data"
+          readOnly: false
+        - name: gitea-config
+          mountPath: "/data/gitea/conf"
+          readOnly: false
+        resources:
+          requests:
+            cpu: 10m
+            memory: 50Mi
+          limits:
+            cpu: 1
+            memory: 200Mi
+      volumes:
+      - name: gitea
+        persistentVolumeClaim:
+          claimName: gitea
+      - name: gitea-config
+        configMap:
+          name: gitea-config

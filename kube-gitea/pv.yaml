@@ -1,0 +1,22 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: gitea
+  namespace: gitea
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: local-storage
+  local:
+    path: /var/opt
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - yourworkernode

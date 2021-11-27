@@ -1,0 +1,19 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: dash-tls
+  namespace: kube-system
+spec:
+  secretName: dash-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: dash.safesecs.io
+  dnsNames:
+  - dash.safesecs.io
+  acme:
+    config:
+    - http01:
+        ingressClass: nginx
+      domains:
+      - dash.safesecs.io

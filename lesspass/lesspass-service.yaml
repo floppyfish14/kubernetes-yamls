@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: lesspass-frontend
+  namespace: kube-lesspass
+  labels:
+    name: lesspass-frontend
+spec:
+  ports:
+    - name: lesspass-frontend
+      port: 8080
+      targetPort: 8080
+      nodePort: 8080
+  type: NodePort

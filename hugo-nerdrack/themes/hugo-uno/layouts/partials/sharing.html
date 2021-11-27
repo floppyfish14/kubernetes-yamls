@@ -1,0 +1,8 @@
+{{ if .Site.Params.Sharing }}
+  <div class="sharing">
+    {{ range .Site.Params.Sharing.list }}
+    <a href="{{ .link }}" class="{{ .class }}" title="{{ .title }}">
+                  <span class="fa fa-{{ .class }}"></span></a>
+    {{ end }}
+  </div>
+{{ end }}

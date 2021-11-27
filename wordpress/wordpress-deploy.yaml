@@ -1,0 +1,96 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+  labels:
+    app: wordpress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: wordpress
+    spec:
+      initContainers:
+      - name: busybox
+        image: busybox:latest
+        command: ["/bin/sh"]
+        args: ["-c", "chown -R 65534:101 /var/www/html"]
+        volumeMounts:
+        - name: wordpress-pvc
+          mountPath: /var/www/html
+      volumes:
+      - name: wordpress-pvc
+        persistentVolumeClaim:
+          claimName: wordpress-pvc
+      containers:
+      - name: php-fpm
+        image: da3dalus/nginx-php-fpm:opcache
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "320Mi"
+            cpu: "400m"
+          limits:
+            memory: "384Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 443
+          name: nginx
+        volumeMounts:   
+        - name: wordpress-pvc
+          mountPath: /var/www/html
+        - name: nginx-config
+          mountPath: /etc/nginx/sites-enabled/default.conf
+          subPath: default.conf
+        - name: zz-docker
+          mountPath: /etc/php7/php-fpm.d/zz-docker.conf
+          subPath: zz-docker.conf
+        - name: mysql-sock
+          mountPath: /var/run/mysqld/
+        - name: nginx-sock
+          mountPath: /var/run/nginx/
+      - name: mysql
+        image: mysql:5.7
+        env:
+        - name: MYSQL_ALLOW_EMPTY_PASSWORD
+          value: "1"
+        ports:
+        - containerPort: 3306
+          name: mysql
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+          subPath: mysql
+        - name: mysql-conf
+          mountPath: /etc/mysql/conf.d/bind.cnf
+          subPath: bind.cnf
+        - name: mysql-sock
+          mountPath: /var/run/mysqld/
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-pv-claim
+      - name: mysql-conf
+        configMap:
+          name: mysql
+      - name: nginx-config
+        configMap:
+          name: nginx-config
+      - name: wordpress-pvc
+        persistentVolumeClaim:
+          claimName: wordpress-pvc
+      - name: zz-docker
+        configMap:
+          name: zz-docker
+      - name: mysql-sock
+        emptyDir: {}
+      - name: nginx-sock
+        emptyDir: {}
+      imagePullSecrets:
+      - name: regcred

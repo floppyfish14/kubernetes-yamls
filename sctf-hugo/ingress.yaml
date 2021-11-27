@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sctf-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+
+spec:
+  tls:
+  - hosts:
+    - seattlectf.com
+    - www.seattlectf.com
+    secretName: sctf-tls
+  rules:
+  - host: seattlectf.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx
+          servicePort: 80
+
+  - host: www.seattlectf.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx
+          servicePort: 80

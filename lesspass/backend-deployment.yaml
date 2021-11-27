@@ -1,0 +1,44 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yaml
+    kompose.version: 1.16.0 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: backend
+  name: backend
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: backend
+    spec:
+      containers:
+      - env:
+        - name: DATABASE_ENGINE
+          value: django.db.backends.postgresql
+        - name: DATABASE_HOST
+          value: db
+        - name: DATABASE_NAME
+          value: postgres
+        - name: DATABASE_PORT
+          value: "5432"
+        - name: DATABASE_USER
+          value: postgres
+        image: lesspass/backend:latest
+        name: backend
+        resources: {}
+        volumeMounts:
+        - mountPath: /backend/www
+          name: www
+      restartPolicy: Always
+      volumes:
+      - name: www
+        persistentVolumeClaim:
+          claimName: www
+status: {}

@@ -1,0 +1,799 @@
+  <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title> Hugo Continuous Integration and Deployment &middot; Nerdrack as a Solution </title>
+    
+    <link rel="stylesheet" type="text/css" href="https://nerdrack.com//css/uno.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://nerdrack.com//css/lightGallery.css" />
+    <link rel="stylesheet" type="text/css" href="https://nerdrack.com//css/images.css" />
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://nerdrack.com/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="https://nerdrack.com/favicon.ico">
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Nerdrack as a Solution" />
+    
+    <script src="https://nerdrack.com//js/jquery.min.js"></script>
+    <script src="https://nerdrack.com//js/main.min.js"></script>
+</head>
+
+  <body>
+    <div id="scriptHeader">
+    <span class="mobile btn-mobile-menu">
+            <i class="fa fa-bars btn-mobile-menu__icon"></i>
+            <i class="fa fa-times btn-mobile-close__icon hidden"> </i>
+    </span>
+    <header class="
+        
+            panel-cover panel-cover--collapsed
+        "  style="background-image: url(/images/background-cover.jpg)" >
+    <div class="panel-main">
+        <div id="particles-js"></div>
+         
+        <script src="https://nerdrack.com//js/particles.min.js"></script>
+        <script src="https://nerdrack.com//js/particles.js"></script>
+        <script src="https://nerdrack.com//js/ResizeSensor.js"></script>
+        <script src="https://nerdrack.com//js/ElementQueries.js"></script>
+        <div class="panel-main__inner panel-inverted">
+            <div class="panel-main__content"> 
+                <a href="https://nerdrack.com//" title="link to homepage for Nerdrack as a Solution"> <img src="https://nerdrack.com/images/logo-1.png" width="400" alt="Nerdrack as a Solution logo" class="panel-cover__logo logo" /> </a> 
+                <hr class="panel-cover__divider" />
+                <p class="panel-cover__description">  Let the nerds figure it out for you.  </p>
+                <hr class="panel-cover__divider panel-cover__divider--secondary" />
+                <div class="navigation-wrapper">
+                    <nav class="cover-navigation cover-navigation--primary">
+                        <ul class="navigation">
+                            <li class="navigation__item"><a href="https://nerdrack.com/#blog" title="link to Nerdrack as a Solution blog" class="blog-button">Blog</a> </li></br>
+                            
+                            
+                       </ul>
+                    </nav> <nav class="cover-navigation navigation--social">
+      
+        <ul class="navigation">
+        
+        <li class="navigation__item">
+            <a href="mailto:mfish551.mf@gmail.com" title=""> <i class="fa fa-envelope"></i>
+              <span class="label">email</span></a>
+        </li>
+        
+        <li class="navigation__item">
+            <a href="#!" title="test"> <i class="fa fa-linkedin"></i>
+              <span class="label">linkedin</span></a>
+        </li>
+        
+        <li class="navigation__item">
+            <a href="https://git.nerdrack.com" title="we host our own repos"> <i class="fa fa-git"></i>
+              <span class="label">gitea</span></a>
+        </li>
+        
+        </ul>
+      
+</nav>
+ </div>
+            </div>
+        </div>
+        <div class="panel-cover--overlay"></div>
+    </div>
+</header>
+</div>
+<noscript>
+    <style>
+        #scriptHeader {display:none;}
+        .navigation-wrapper{
+            display: block;
+            top: 0;
+        }
+    </style>
+
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+        <div class="panel-main">
+            <div id="particles-js"></div>
+            
+            <script src="https://nerdrack.com//js/particles.min.js"></script>
+            <script src="https://nerdrack.com//js/particles.js"></script>
+            <script src="https://nerdrack.com//js/ResizeSensor.js"></script>
+            <script src="https://nerdrack.com//js/ElementQueries.js"></script>
+            <div class="panel-main__inner panel-inverted">
+                <div class="panel-main__content"> 
+                    <a href="https://nerdrack.com//" title="link to homepage for Nerdrack as a Solution"> <img src="https://nerdrack.com/images/logo-1.png" width="200" alt="Nerdrack as a Solution logo" class="panel-cover__logo logo" /> </a> 
+                    <h1 class="panel-cover__title panel-title">
+                        <a href="https://nerdrack.com//"  title="link to homepage for Nerdrack as a Solution">Nerdrack as a Solution</a>
+                    </h1>
+                    <hr class="panel-cover__divider" />
+                    <p class="panel-cover__description">  This site is built using <a href="http://gohugo.io">hugo</a> and the theme is built by <a href="http://fredrikloch.me">Fredrik</a> if you enjoy it, it is available at <a href="https://github.com/SenjinDarashiva/hugo-uno">github</a>  </p>
+                    <hr class="panel-cover__divider panel-cover__divider--secondary" />
+                    <div class="navigation-wrapper">
+                        <nav class="cover-navigation cover-navigation--primary">
+                            <ul class="navigation">
+                                <li class="navigation__item"><a href="https://nerdrack.com//#blog" title="link to Nerdrack as a Solution blog" class="blog-button">Blog</a> </li></br>
+                                
+                                
+                           </ul>
+                        </nav> <nav class="cover-navigation navigation--social">
+      
+        <ul class="navigation">
+        
+        <li class="navigation__item">
+            <a href="mailto:mfish551.mf@gmail.com" title=""> <i class="fa fa-envelope"></i>
+              <span class="label">email</span></a>
+        </li>
+        
+        <li class="navigation__item">
+            <a href="#!" title="test"> <i class="fa fa-linkedin"></i>
+              <span class="label">linkedin</span></a>
+        </li>
+        
+        <li class="navigation__item">
+            <a href="https://git.nerdrack.com" title="we host our own repos"> <i class="fa fa-git"></i>
+              <span class="label">gitea</span></a>
+        </li>
+        
+        </ul>
+      
+</nav>
+ </div>
+                </div>
+            </div>
+            <div class="panel-cover--overlay"></div>
+        </div>
+    </header>
+</noscript>
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <div class="post">
+          <h2>Hugo Continuous Integration and Deployment</h2>
+          <span class="post-date">Sun, Apr 14, 2019</span>
+          
+            <h3 id="TOC" onclick="toggle()">Table Of Contents</h3>
+            <hr></hr>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#hugo-inside-of-a-ci-cd-pipeline">Hugo inside of a CI/CD pipeline</a>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+</ul></li>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#build-and-push-docker-images">Build and Push docker images</a></li>
+<li><a href="#push-your-hugo-code-to-your-repository">Push your hugo code to your repository</a></li>
+<li><a href="#deploy-jenkins-on-kubernetes">Deploy Jenkins on kubernetes</a></li>
+<li><a href="#create-some-jobs-in-jenkins">Create some jobs in jenkins</a></li>
+<li><a href="#deploy-hugo-on-kubernetes">Deploy hugo on kubernetes</a></li>
+<li><a href="#profit">Profit</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+          
+          
+
+<h3 id="hugo-inside-of-a-ci-cd-pipeline">Hugo inside of a CI/CD pipeline</h3>
+
+<hr />
+
+<p>Hugo is a popular open-source framework for building static websites; it&rsquo;s fast, simple, and free as in free beer; <em>however</em> there is a catch, due to it&rsquo;s static nature, Hugo must be recompiled every time you make a change to the site. This means that you&rsquo;d introduce a kink in the development of your website if you are using containerization. <em>Especially inside of a cloud environment</em>.</p>
+
+<p><strong>Think of it this way:</strong></p>
+
+<ol>
+<li>You update some css for your site</li>
+<li>Now it&rsquo;s time to recompile your custom hugo docker image to reflect the changes</li>
+<li>After you&rsquo;ve pushed the changes to dockerhub, you need to re-apply your deployment manifest to your cluster.</li>
+<li>Now that you&rsquo;ve waited about 10 or so minutes for your change to be made, you realize that you now want to make more changes, and the vicious cycle repeats!</li>
+</ol>
+
+<p>It would look something like this (assuming you set your Dockerfile to pull in the hugo content):</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vim static/main.css
+$ docker image build -f ./
+$ docker tag &lt;image number&gt; &lt;user&gt;/&lt;image-name&gt;:&lt;tag-name&gt;
+$ docker push &lt;user&gt;/&lt;image-name&gt;:&lt;tag-name&gt;
+$ kubectl delete deployment hugo -n hugo
+$ kubectl apply -f deployment.yaml -n hugo</code></pre></div>
+<p>This doesn&rsquo;t seem like it&rsquo;s too much of a hastle, until you realize:</p>
+
+<ul>
+<li>you have to come up with a new tag name for every revision of your website.</li>
+<li>you have to do a lot of waiting for the image to be pushed to docker</li>
+<li>you are creating an unnecessary amount of docker images on your laptop</li>
+<li>you&rsquo;re tired of repeating this sequence: up, up, up, hold left arrow for 3 seconds, backspace, primary paste, enter, up, up, etc.</li>
+<li><strong>you don&rsquo;t want to write a security blog anymore</strong></li>
+</ul>
+
+<p>Instead, I introduce my good friend jenkins. <img src="https://nerdrack.com/posts/hugo-cicd/images/jenkins-dude.png#center" alt="jenkins_dude" /></p>
+
+<p>Think of Jenkins as your personal workhorse or slave or whatever; it doesn&rsquo;t matter to me.</p>
+
+<p>Jenkins is a ContinuousIntegration/ContinuousDeployment software that will improve your life as a kubernetes admin. Another pre-req is git, or gitea, or gitlab, etc. All you really need is a <em>version control system</em> to host your code inside of, but it must be <strong>reachable from the internet</strong>. Personally, I chose to host my own gitea on my cluster because I would prefer to have complete control over my data. (There will be a post on how to do this later!)</p>
+
+<p>Here is how the CI/CD pipeline will work:</p>
+
+<ol>
+<li>You update some css on your site</li>
+<li>You push the contents to a repo inside of gitea</li>
+<li>Jenkins receives a webhook from gitea after every push</li>
+<li>Jenkins then tests the build using a hugo plugin</li>
+<li>If it passes, it deletes a pod on your cluster (causing your replicationset to create another one)</li>
+<li>Your deployment manifests for hugo pull in the code from gitea using an initContainer</li>
+<li>Your Hugo pod then uses the updated contents from the repo</li>
+<li>A fancy new css style is applied!</li>
+</ol>
+
+<p>Notice the difference here; instead of manually updating and waiting, all you did was:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vim static/main.css
+$ git add ./
+$ git commit -m <span style="color:#ed9d13">&#34;made cool stuff happen&#34;</span>
+$ git push origin master</code></pre></div>
+<p>That&rsquo;s it. Everything else is handled in the background for you!</p>
+
+<h4 id="prerequisites">Prerequisites</h4>
+
+<hr />
+
+<ul>
+<li>Kubernetes cluster</li>
+<li>a git repo of some kind</li>
+<li>docker installed locally to push custom images out with</li>
+<li>a jenkins deployment (I&rsquo;ll set that up for you in this post)</li>
+<li>a hugo deployment manifest (I&rsquo;ll also hook you up with that)</li>
+<li>(Optional) a local hugo install to test your site with before you push</li>
+</ul>
+
+<h3 id="getting-started">Getting Started</h3>
+
+<hr />
+
+<p>To begin, create a namespace for your deployments:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kubectl create ns hugo
+$ kubectl create ns jenkins</code></pre></div>
+<p>Now we need some docker images to pull in content from git and another to run hugo with. Here are some simple docker files to do this with:</p>
+
+<p><strong>Dockerfile-git</strong></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#6ab825;font-weight:bold">From</span><span style="color:#ed9d13"> alpine:edge</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">RUN</span> apk add --update --no-cache <span style="color:#ed9d13">\
+</span><span style="color:#ed9d13"></span>    git <span style="color:#a61717;background-color:#e3d2d2">\</span></code></pre></div>
+<p><strong>Dockerfile-hugo</strong></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#6ab825;font-weight:bold">FROM</span><span style="color:#ed9d13"> busybox:1.28 AS fetch-standard</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>ARG <span style="color:#40ffff">VERSION</span>=<span style="color:#3677a9">0</span>.53<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">ADD</span><span style="color:#ed9d13"> https://github.com/gohugoio/hugo/releases/download/v${VERSION}/hugo_${VERSION}_Linux-64bit.tar.gz /hugo.tar.gz</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">RUN</span> tar -zxvf hugo.tar.gz<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">RUN</span> [<span style="color:#ed9d13">&#34;/hugo&#34;</span>, <span style="color:#ed9d13">&#34;version&#34;</span>]<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">FROM</span><span style="color:#ed9d13"> busybox:1.28 AS fetch-extended</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>ARG <span style="color:#40ffff">VERSION</span>=<span style="color:#3677a9">0</span>.53<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">ADD</span><span style="color:#ed9d13"> https://github.com/gohugoio/hugo/releases/download/v${VERSION}/hugo_extended_${VERSION}_Linux-64bit.tar.gz /hugo.tar.gz</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">RUN</span> tar -zxvf hugo.tar.gz<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">FROM</span><span style="color:#ed9d13"> scratch AS files</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>COPY --from=fetch-standard /hugo /bin/hugo<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>COPY --from=fetch-extended /hugo /bin/hugo-extended<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">FROM</span><span style="color:#ed9d13"> scratch</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>COPY --from=files / /</code></pre></div>
+<p><strong>Dockerfile-jenkins</strong></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#6ab825;font-weight:bold">FROM</span><span style="color:#ed9d13"> openjdk:8-jdk-alpine</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">RUN</span> apk add --no-cache git openssh-client curl unzip bash ttf-dejavu coreutils tini hugo<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>ARG <span style="color:#40ffff">user</span>=jenkins<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>ARG <span style="color:#40ffff">group</span>=jenkins<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>ARG <span style="color:#40ffff">uid</span>=<span style="color:#3677a9">1000</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>ARG <span style="color:#40ffff">gid</span>=<span style="color:#3677a9">1000</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>ARG <span style="color:#40ffff">http_port</span>=<span style="color:#3677a9">8080</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>ARG <span style="color:#40ffff">agent_port</span>=<span style="color:#3677a9">50000</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>ARG <span style="color:#40ffff">JENKINS_HOME</span>=/var/jenkins_home<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">ENV</span><span style="color:#ed9d13"> JENKINS_HOME $JENKINS_HOME</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">ENV</span><span style="color:#ed9d13"> JENKINS_SLAVE_AGENT_PORT ${agent_port}</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#999;font-style:italic"># Install kubectl</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span> RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/<span style="color:#6ab825;font-weight:bold">$(</span>curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt<span style="color:#6ab825;font-weight:bold">)</span>/bin/linux/amd64/kubectl &amp;&amp; <span style="color:#ed9d13">\
+</span><span style="color:#ed9d13"></span>     chmod +x ./kubectl &amp;&amp; <span style="color:#ed9d13">\
+</span><span style="color:#ed9d13"></span>     mv ./kubectl /usr/local/bin/kubectl<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#999;font-style:italic"># Jenkins is run with user `jenkins`, uid = 1000</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#999;font-style:italic"># If you bind mount a volume from the host or a data container,</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#999;font-style:italic"># ensure you use the same uid</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">RUN</span> mkdir -p <span style="color:#40ffff">$JENKINS_HOME</span> <span style="color:#ed9d13">\
+</span><span style="color:#ed9d13"></span>  &amp;&amp; chown <span style="color:#ed9d13">${</span><span style="color:#40ffff">uid</span><span style="color:#ed9d13">}</span>:<span style="color:#ed9d13">${</span><span style="color:#40ffff">gid</span><span style="color:#ed9d13">}</span> <span style="color:#40ffff">$JENKINS_HOME</span> <span style="color:#ed9d13">\
+</span><span style="color:#ed9d13"></span>  &amp;&amp; addgroup -g <span style="color:#ed9d13">${</span><span style="color:#40ffff">gid</span><span style="color:#ed9d13">}</span> <span style="color:#ed9d13">${</span><span style="color:#40ffff">group</span><span style="color:#ed9d13">}</span> <span style="color:#ed9d13">\
+</span><span style="color:#ed9d13"></span>  &amp;&amp; adduser -h <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$JENKINS_HOME</span><span style="color:#ed9d13">&#34;</span> -u <span style="color:#ed9d13">${</span><span style="color:#40ffff">uid</span><span style="color:#ed9d13">}</span> -G <span style="color:#ed9d13">${</span><span style="color:#40ffff">group</span><span style="color:#ed9d13">}</span> -s /bin/bash -D <span style="color:#ed9d13">${</span><span style="color:#40ffff">user</span><span style="color:#ed9d13">}</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#999;font-style:italic"># Jenkins home directory is a volume, so configuration and build history</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#999;font-style:italic"># can be persisted and survive image upgrades</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#999;font-style:italic"># `/usr/share/jenkins/ref/` contains all reference configuration we want</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#999;font-style:italic"># to set on a fresh new installation. Use it to bundle additional plugins</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#999;font-style:italic"># or config file with your custom jenkins Docker image.</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">RUN</span> mkdir -p /usr/share/jenkins/ref/init.groovy.d<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#999;font-style:italic"># jenkins version being bundled in this docker image</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>ARG JENKINS_VERSION<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">ENV</span><span style="color:#ed9d13"> JENKINS_VERSION ${JENKINS_VERSION:-2.164.1}</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#999;font-style:italic"># jenkins.war checksum, download will be validated using it</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>ARG <span style="color:#40ffff">JENKINS_SHA</span>=65543f5632ee54344f3351b34b305702df12393b3196a95c3771ddb3819b220b<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#999;font-style:italic"># Can be used to customize where jenkins.war get downloaded from</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>ARG <span style="color:#40ffff">JENKINS_URL</span>=https://repo.jenkins-ci.org/public/org/jenkins-ci/main/jenkins-war/<span style="color:#ed9d13">${</span><span style="color:#40ffff">JENKINS_VERSION</span><span style="color:#ed9d13">}</span>/jenkins-war-<span style="color:#ed9d13">${</span><span style="color:#40ffff">JENKINS_VERSION</span><span style="color:#ed9d13">}</span>.war<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#999;font-style:italic"># could use ADD but this one does not check Last-Modified header neither does it allow to control checksum</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#999;font-style:italic"># see https://github.com/docker/docker/issues/8331</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">RUN</span> curl -fsSL <span style="color:#ed9d13">${</span><span style="color:#40ffff">JENKINS_URL</span><span style="color:#ed9d13">}</span> -o /usr/share/jenkins/jenkins.war <span style="color:#ed9d13">\
+</span><span style="color:#ed9d13"></span>  &amp;&amp; <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;</span><span style="color:#ed9d13">${</span><span style="color:#40ffff">JENKINS_SHA</span><span style="color:#ed9d13">}</span><span style="color:#ed9d13">  /usr/share/jenkins/jenkins.war&#34;</span> | sha256sum -c -<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">ENV</span><span style="color:#ed9d13"> JENKINS_UC https://updates.jenkins.io</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">ENV</span><span style="color:#ed9d13"> JENKINS_UC_EXPERIMENTAL=https://updates.jenkins.io/experimental</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">ENV</span><span style="color:#ed9d13"> JENKINS_INCREMENTALS_REPO_MIRROR=https://repo.jenkins-ci.org/incrementals</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">RUN</span> chown -R <span style="color:#ed9d13">${</span><span style="color:#40ffff">user</span><span style="color:#ed9d13">}</span> <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$JENKINS_HOME</span><span style="color:#ed9d13">&#34;</span> /usr/share/jenkins/ref<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#999;font-style:italic"># for main web interface:</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">EXPOSE</span><span style="color:#ed9d13"> ${http_port}</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#999;font-style:italic"># will be used by attached slave agents:</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">EXPOSE</span><span style="color:#ed9d13"> ${agent_port}</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">ENV</span><span style="color:#ed9d13"> COPY_REFERENCE_FILE_LOG $JENKINS_HOME/copy_reference_file.log</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>USER <span style="color:#ed9d13">${</span><span style="color:#40ffff">user</span><span style="color:#ed9d13">}</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>COPY jenkins-support /usr/local/bin/jenkins-support<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>COPY jenkins.sh /usr/local/bin/jenkins.sh<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>COPY tini-shim.sh /bin/tini<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">ENTRYPOINT</span><span style="color:#ed9d13"> [&#34;/sbin/tini&#34;, &#34;--&#34;, &#34;/usr/local/bin/jenkins.sh&#34;]</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#999;font-style:italic"># from a derived Dockerfile, can use `RUN plugins.sh active.txt` to setup /usr/share/jenkins/ref/plugins from a support bundle</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>COPY plugins.sh /usr/local/bin/plugins.sh<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span>COPY install-plugins.sh /usr/local/bin/install-plugins.sh<span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#999;font-style:italic"># Install wanted plugins</span><span style="color:#a61717;background-color:#e3d2d2">
+</span><span style="color:#a61717;background-color:#e3d2d2"></span><span style="color:#6ab825;font-weight:bold">RUN</span> /usr/local/bin/install-plugins.sh kubernetes:<span style="color:#ed9d13">${</span><span style="color:#40ffff">VERSION</span><span style="color:#ed9d13">}</span> gogs-webhook:latest kubernetes-cli:latest hugo:latest github:latest gitea:latest</code></pre></div>
+<h3 id="build-and-push-docker-images">Build and Push docker images</h3>
+
+<hr />
+
+<p>A default Jenkins install will not be useful for our scenario; instead, download <strong><a href="https://nerdrack.com/posts/hugo-cicd/kube-jenkins.tar.gz">this tar archive</a></strong> and extract it to a directory on your machine. This will create a docker image with gogs, gitea, git, hugo, and kubernetes plugins pre-installed. Pretty sweet huh?</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir -p /tmp/{jenkins,alpine-git,hugo}
+$ <span style="color:#24909d">cd</span> /tmp/jenkins
+$ wget https://nerdrack.com/posts/hugo-cicd/kube-jenkins.tar.gz
+$ tar -zxvf kube-jenkins.tar.gz
+$ docker image build -f ./Dockerfile
+$ docker tag &lt;image number&gt; &lt;docker user&gt;/kube-jenkins:latest
+$ docker push &lt;docker user&gt;/kube-jenkins:latest</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ <span style="color:#24909d">cd</span> /tmp/alpine-git
+$ docker image build -f Dockerfile-git
+$ docker tag &lt;image number&gt; &lt;docker user&gt;/alpine-git:latest
+$ docker push &lt;docker user&gt;/alpine-git:latest</code></pre></div><div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ <span style="color:#24909d">cd</span> /tmp/hugo
+$ docker image build -f Dockerfile-hugo
+$ docker tag &lt;image number&gt; &lt;docker user&gt;/hugo:latest
+$ docker push &lt;docker user&gt;/hugo:latest</code></pre></div>
+<p>We have just created three docker images. One for jenkins (with kubectl, hugo, git, and gitea plugins), another with hugo to host our site on, and a git image to pull in the content for hugo.</p>
+
+<h3 id="push-your-hugo-code-to-your-repository">Push your hugo code to your repository</h3>
+
+<hr />
+
+<p>For this to work, we need a repository to pull from. Issue:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo new site myhugosite
+$ <span style="color:#24909d">cd</span> myhugosite
+$ hugo new posts/myfirstpost.md
+$ <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;HELLOOO!&#34;</span> &gt;&gt; content/posts/myfirstpost.md
+$ git init ./
+$ git remote add origin https://&lt;yourdomain&gt;/&lt;username&gt;/&lt;reponame&gt;.git
+$ git add ./
+$ git commit -m <span style="color:#ed9d13">&#34;initial commit&#34;</span>
+$ git push origin master</code></pre></div>
+<p>To begin, create a repository in whichever Version Control System you&rsquo;d prefer; I&rsquo;ll wait while you do that real quick.</p>
+
+<p>Now we can populate a directory, called myhugosite, with a barebones hugo structure. Then we place a post inside for fun. After that initialize the site as a git repo and push its content to our repository.</p>
+
+<h3 id="deploy-jenkins-on-kubernetes">Deploy Jenkins on kubernetes</h3>
+
+<hr />
+
+<p><strong>resolv-conf.yaml</strong></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#666"> </span>v1<span style="color:#666">
+</span><span style="color:#666"></span>kind:<span style="color:#666"> </span>ConfigMap<span style="color:#666">
+</span><span style="color:#666"></span>metadata:<span style="color:#666">
+</span><span style="color:#666">  </span>name:<span style="color:#666"> </span>resolv-conf<span style="color:#666">
+</span><span style="color:#666">  </span>labels:<span style="color:#666">
+</span><span style="color:#666">    </span>app:<span style="color:#666"> </span>jenkins<span style="color:#666">
+</span><span style="color:#666"></span>data:<span style="color:#666">
+</span><span style="color:#666">  </span>resolv.conf:<span style="color:#666"> </span><span style="color:#ed9d13">|
+</span><span style="color:#ed9d13">    search jenkins.svc.cluster.local svc.cluster.local cluster.local</span><span style="color:#666">
+</span><span style="color:#666">    </span>nameserver<span style="color:#666"> </span><span style="color:#3677a9">10.32.0.10</span><span style="color:#666">
+</span><span style="color:#666">    </span>nameserver<span style="color:#666"> </span><span style="color:#3677a9">8.8.8.8</span></code></pre></div>
+<p>This configmap is needed for jenkins to reach outside of the cluster. Because we&rsquo;ve created an alpine version of Jenkins, we are using muslc instead of glibc; this causes issues in external domain name resolution by default. The reason for this error has to do with ndots=5 being placed inside of /etc/resolv.conf <strong><a href="https://wiki.musl-libc.org/functional-differences-from-glibc.html#Name-Resolver/DNS">read this article</a></strong> to find out more. To combat this, apply resolv-conf.yaml in the jenkins namespace and call it in the deployment manifest. If needed, modify the file.</p>
+
+<p><strong>service.yaml</strong></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#666"> </span>v1<span style="color:#666">
+</span><span style="color:#666"></span>kind:<span style="color:#666"> </span>Service<span style="color:#666">
+</span><span style="color:#666"></span>metadata:<span style="color:#666">
+</span><span style="color:#666">  </span>name:<span style="color:#666"> </span>jenkins<span style="color:#666">
+</span><span style="color:#666"></span>spec:<span style="color:#666">
+</span><span style="color:#666">  </span>ports:<span style="color:#666">
+</span><span style="color:#666">  </span>-<span style="color:#666"> </span>port:<span style="color:#666"> </span><span style="color:#3677a9">8080</span><span style="color:#666">
+</span><span style="color:#666">    </span>targetPort:<span style="color:#666"> </span><span style="color:#3677a9">8080</span><span style="color:#666">
+</span><span style="color:#666">  </span>selector:<span style="color:#666">
+</span><span style="color:#666">    </span>app:<span style="color:#666"> </span>jenkins</code></pre></div>
+<p>This will create a clusterIP service on port 8080. To use this, I recommend using the nginx ingress-controller (covered in <strong><a href="https://nerdrack.com/posts/ingress-controller">this</a></strong> post. If you do not believe this will work for your setup, feel free to change the type to loadbalancer or nodeport.</p>
+
+<p><strong>deployment.yaml</strong></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#666"> </span>extensions/v1beta1<span style="color:#666">
+</span><span style="color:#666"></span>kind:<span style="color:#666"> </span>Deployment<span style="color:#666">
+</span><span style="color:#666"></span>metadata:<span style="color:#666">
+</span><span style="color:#666">  </span>name:<span style="color:#666"> </span>jenkins<span style="color:#666">
+</span><span style="color:#666"></span>spec:<span style="color:#666">
+</span><span style="color:#666">  </span>replicas:<span style="color:#666"> </span><span style="color:#3677a9">1</span><span style="color:#666">
+</span><span style="color:#666">  </span>template:<span style="color:#666">
+</span><span style="color:#666">    </span>metadata:<span style="color:#666">
+</span><span style="color:#666">      </span>labels:<span style="color:#666">
+</span><span style="color:#666">        </span>app:<span style="color:#666"> </span>jenkins<span style="color:#666">
+</span><span style="color:#666">    </span>spec:<span style="color:#666">
+</span><span style="color:#666">      </span>initContainers:<span style="color:#666">
+</span><span style="color:#666">      </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>init-disk<span style="color:#666">
+</span><span style="color:#666">        </span>image:<span style="color:#666"> </span>busybox:latest<span style="color:#666">
+</span><span style="color:#666">        </span>command:<span style="color:#666"> </span>[<span style="color:#ed9d13">&#34;/bin/sh&#34;</span>]<span style="color:#666">
+</span><span style="color:#666">        </span>args:<span style="color:#666"> </span>[<span style="color:#ed9d13">&#34;-c&#34;</span>,<span style="color:#666"> </span><span style="color:#ed9d13">&#34;chown -R 1000:1000 /var/jenkins_home&#34;</span>]<span style="color:#666">
+</span><span style="color:#666">        </span>volumeMounts:<span style="color:#666">
+</span><span style="color:#666">        </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>jenkins-home<span style="color:#666">
+</span><span style="color:#666">          </span>mountPath:<span style="color:#666"> </span>/var/jenkins_home<span style="color:#666">
+</span><span style="color:#666">          </span>readOnly:<span style="color:#666"> </span><span style="color:#6ab825;font-weight:bold">false</span><span style="color:#666">
+</span><span style="color:#666">      </span>containers:<span style="color:#666">
+</span><span style="color:#666">      </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>jenkins<span style="color:#666">
+</span><span style="color:#666">        </span>image:<span style="color:#666"> </span>&lt;docker<span style="color:#666"> </span>user&gt;/kube-jenkins:hugo<span style="color:#666">
+</span><span style="color:#666">        </span>imagePullPolicy:<span style="color:#666"> </span>Always<span style="color:#666">
+</span><span style="color:#666">        </span>env:<span style="color:#666">
+</span><span style="color:#666">          </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>JAVA_OPTS<span style="color:#666">
+</span><span style="color:#666">            </span>value:<span style="color:#666"> </span>-Djenkins.install.runSetupWizard=<span style="color:#6ab825;font-weight:bold">false</span><span style="color:#666">
+</span><span style="color:#666">        </span>ports:<span style="color:#666">
+</span><span style="color:#666">        </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>jenkins-http<span style="color:#666">
+</span><span style="color:#666">          </span>containerPort:<span style="color:#666"> </span><span style="color:#3677a9">8080</span><span style="color:#666">
+</span><span style="color:#666">        </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>jnlp-port<span style="color:#666">
+</span><span style="color:#666">          </span>containerPort:<span style="color:#666"> </span><span style="color:#3677a9">50000</span><span style="color:#666">
+</span><span style="color:#666">        </span>volumeMounts:<span style="color:#666">
+</span><span style="color:#666">        </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>jenkins-home<span style="color:#666">
+</span><span style="color:#666">          </span>mountPath:<span style="color:#666"> </span>/var/jenkins_home<span style="color:#666">
+</span><span style="color:#666">        </span>volumeMounts:<span style="color:#666">
+</span><span style="color:#666">        </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>resolv-conf<span style="color:#666">
+</span><span style="color:#666">          </span>mountPath:<span style="color:#666"> </span>/etc/resolv.conf<span style="color:#666">
+</span><span style="color:#666">          </span>subPath:<span style="color:#666"> </span>resolv.conf<span style="color:#666">
+</span><span style="color:#666">      </span>imagePullSecrets:<span style="color:#666">
+</span><span style="color:#666">      </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>regcred<span style="color:#666">
+</span><span style="color:#666">      </span>volumes:<span style="color:#666">
+</span><span style="color:#666">      </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>jenkins-home<span style="color:#666">
+</span><span style="color:#666">        </span>emptyDir:<span style="color:#666"> </span>{}<span style="color:#666">
+</span><span style="color:#666">      </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>resolv-conf<span style="color:#666">
+</span><span style="color:#666">        </span>configMap:<span style="color:#666">
+</span><span style="color:#666">          </span>name:<span style="color:#666"> </span>resolv-conf</code></pre></div>
+<p>Our deployment.yaml will pull in the Jenkins image we created earlier and begin running it. We disable the setupwizard because we have already included all of the plugins we need and soon we will have a configuration manifest that sets up our cluster for us!</p>
+
+<p><strong>configmap.yaml</strong></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jenkins-config
+  labels:
+    app: jenkins
+data:
+  config.xml: |
+    <span style="color:#cd2828;font-weight:bold">&lt;?xml version=&#39;1.1&#39; encoding=&#39;UTF-8&#39;?&gt;</span>
+    <span style="color:#6ab825;font-weight:bold">&lt;hudson&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;disabledAdministrativeMonitors/&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;version&gt;</span>2.164.1<span style="color:#6ab825;font-weight:bold">&lt;/version&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;installStateName&gt;</span>RUNNING<span style="color:#6ab825;font-weight:bold">&lt;/installStateName&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;numExecutors&gt;</span>4<span style="color:#6ab825;font-weight:bold">&lt;/numExecutors&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;mode&gt;</span>NORMAL<span style="color:#6ab825;font-weight:bold">&lt;/mode&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;useSecurity&gt;</span>true<span style="color:#6ab825;font-weight:bold">&lt;/useSecurity&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;authorizationStrategy</span> <span style="color:#bbb">class=</span><span style="color:#ed9d13">&#34;hudson.security.FullControlOnceLoggedInAuthorizationStrategy&#34;</span><span style="color:#6ab825;font-weight:bold">&gt;</span>
+        <span style="color:#6ab825;font-weight:bold">&lt;denyAnonymousReadAccess&gt;</span>true<span style="color:#6ab825;font-weight:bold">&lt;/denyAnonymousReadAccess&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;/authorizationStrategy&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;securityRealm</span> <span style="color:#bbb">class=</span><span style="color:#ed9d13">&#34;hudson.security.HudsonPrivateSecurityRealm&#34;</span><span style="color:#6ab825;font-weight:bold">&gt;</span>
+        <span style="color:#6ab825;font-weight:bold">&lt;disableSignup&gt;</span>false<span style="color:#6ab825;font-weight:bold">&lt;/disableSignup&gt;</span>
+        <span style="color:#6ab825;font-weight:bold">&lt;enableCaptcha&gt;</span>false<span style="color:#6ab825;font-weight:bold">&lt;/enableCaptcha&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;/securityRealm&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;disableRememberMe&gt;</span>false<span style="color:#6ab825;font-weight:bold">&lt;/disableRememberMe&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;projectNamingStrategy</span> <span style="color:#bbb">class=</span><span style="color:#ed9d13">&#34;jenkins.model.ProjectNamingStrategy$DefaultProjectNamingStrategy&#34;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;workspaceDir&gt;</span>${JENKINS_HOME}/workspace/${ITEM_FULL_NAME}<span style="color:#6ab825;font-weight:bold">&lt;/workspaceDir&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;buildsDir&gt;</span>${ITEM_ROOTDIR}/builds<span style="color:#6ab825;font-weight:bold">&lt;/buildsDir&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;markupFormatter</span> <span style="color:#bbb">class=</span><span style="color:#ed9d13">&#34;hudson.markup.EscapedMarkupFormatter&#34;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;jdks/&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;viewsTabBar</span> <span style="color:#bbb">class=</span><span style="color:#ed9d13">&#34;hudson.views.DefaultViewsTabBar&#34;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;myViewsTabBar</span> <span style="color:#bbb">class=</span><span style="color:#ed9d13">&#34;hudson.views.DefaultMyViewsTabBar&#34;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;clouds&gt;</span>
+        <span style="color:#6ab825;font-weight:bold">&lt;org.csanchez.jenkins.plugins.kubernetes.KubernetesCloud</span> <span style="color:#bbb">plugin=</span><span style="color:#ed9d13">&#34;kubernetes@1.14.9&#34;</span><span style="color:#6ab825;font-weight:bold">&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;name&gt;</span>kubernetes<span style="color:#6ab825;font-weight:bold">&lt;/name&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;defaultsProviderTemplate&gt;&lt;/defaultsProviderTemplate&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;templates&gt;</span>
+            <span style="color:#6ab825;font-weight:bold">&lt;org.csanchez.jenkins.plugins.kubernetes.PodTemplate&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;inheritFrom&gt;&lt;/inheritFrom&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;name&gt;</span>jenkins-slave<span style="color:#6ab825;font-weight:bold">&lt;/name&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;namespace&gt;</span>jenkins<span style="color:#6ab825;font-weight:bold">&lt;/namespace&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;privileged&gt;</span>false<span style="color:#6ab825;font-weight:bold">&lt;/privileged&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;capOnlyOnAlivePods&gt;</span>false<span style="color:#6ab825;font-weight:bold">&lt;/capOnlyOnAlivePods&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;alwaysPullImage&gt;</span>false<span style="color:#6ab825;font-weight:bold">&lt;/alwaysPullImage&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;instanceCap&gt;</span>2147483647<span style="color:#6ab825;font-weight:bold">&lt;/instanceCap&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;slaveConnectTimeout&gt;</span>100<span style="color:#6ab825;font-weight:bold">&lt;/slaveConnectTimeout&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;idleMinutes&gt;</span>0<span style="color:#6ab825;font-weight:bold">&lt;/idleMinutes&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;activeDeadlineSeconds&gt;</span>0<span style="color:#6ab825;font-weight:bold">&lt;/activeDeadlineSeconds&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;label&gt;</span>jenkins-slave<span style="color:#6ab825;font-weight:bold">&lt;/label&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;nodeSelector&gt;&lt;/nodeSelector&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;nodeUsageMode&gt;</span>EXCLUSIVE<span style="color:#6ab825;font-weight:bold">&lt;/nodeUsageMode&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;customWorkspaceVolumeEnabled&gt;</span>false<span style="color:#6ab825;font-weight:bold">&lt;/customWorkspaceVolumeEnabled&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;workspaceVolume</span> <span style="color:#bbb">class=</span><span style="color:#ed9d13">&#34;org.csanchez.jenkins.plugins.kubernetes.volumes.workspace.EmptyDirWorkspaceVolume&#34;</span><span style="color:#6ab825;font-weight:bold">&gt;</span>
+                <span style="color:#6ab825;font-weight:bold">&lt;memory&gt;</span>false<span style="color:#6ab825;font-weight:bold">&lt;/memory&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;/workspaceVolume&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;volumes/&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;containers&gt;</span>
+                <span style="color:#6ab825;font-weight:bold">&lt;org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate&gt;</span>
+                  <span style="color:#6ab825;font-weight:bold">&lt;name&gt;</span>jenkins-slave<span style="color:#6ab825;font-weight:bold">&lt;/name&gt;</span>
+                  <span style="color:#6ab825;font-weight:bold">&lt;image&gt;</span>jenkins/jnlp-slave<span style="color:#6ab825;font-weight:bold">&lt;/image&gt;</span>
+                  <span style="color:#6ab825;font-weight:bold">&lt;privileged&gt;</span>false<span style="color:#6ab825;font-weight:bold">&lt;/privileged&gt;</span>
+                  <span style="color:#6ab825;font-weight:bold">&lt;alwaysPullImage&gt;</span>true<span style="color:#6ab825;font-weight:bold">&lt;/alwaysPullImage&gt;</span>
+                  <span style="color:#6ab825;font-weight:bold">&lt;workingDir&gt;</span>/home/jenkins<span style="color:#6ab825;font-weight:bold">&lt;/workingDir&gt;</span>
+                  <span style="color:#6ab825;font-weight:bold">&lt;command&gt;</span>/bin/sh -c<span style="color:#6ab825;font-weight:bold">&lt;/command&gt;</span>
+                  <span style="color:#6ab825;font-weight:bold">&lt;args&gt;</span>cat<span style="color:#6ab825;font-weight:bold">&lt;/args&gt;</span>
+                  <span style="color:#6ab825;font-weight:bold">&lt;ttyEnabled&gt;</span>true<span style="color:#6ab825;font-weight:bold">&lt;/ttyEnabled&gt;</span>
+                  <span style="color:#6ab825;font-weight:bold">&lt;resourceRequestCpu&gt;&lt;/resourceRequestCpu&gt;</span>
+                  <span style="color:#6ab825;font-weight:bold">&lt;resourceRequestMemory&gt;&lt;/resourceRequestMemory&gt;</span>
+                  <span style="color:#6ab825;font-weight:bold">&lt;resourceLimitCpu&gt;&lt;/resourceLimitCpu&gt;</span>
+                  <span style="color:#6ab825;font-weight:bold">&lt;resourceLimitMemory&gt;&lt;/resourceLimitMemory&gt;</span>
+                  <span style="color:#6ab825;font-weight:bold">&lt;envVars/&gt;</span>
+                  <span style="color:#6ab825;font-weight:bold">&lt;ports/&gt;</span>
+                  <span style="color:#6ab825;font-weight:bold">&lt;livenessProbe&gt;</span>
+                    <span style="color:#6ab825;font-weight:bold">&lt;execArgs&gt;&lt;/execArgs&gt;</span>
+                    <span style="color:#6ab825;font-weight:bold">&lt;timeoutSeconds&gt;</span>0<span style="color:#6ab825;font-weight:bold">&lt;/timeoutSeconds&gt;</span>
+                    <span style="color:#6ab825;font-weight:bold">&lt;initialDelaySeconds&gt;</span>0<span style="color:#6ab825;font-weight:bold">&lt;/initialDelaySeconds&gt;</span>
+                    <span style="color:#6ab825;font-weight:bold">&lt;failureThreshold&gt;</span>0<span style="color:#6ab825;font-weight:bold">&lt;/failureThreshold&gt;</span>
+                    <span style="color:#6ab825;font-weight:bold">&lt;periodSeconds&gt;</span>0<span style="color:#6ab825;font-weight:bold">&lt;/periodSeconds&gt;</span>
+                    <span style="color:#6ab825;font-weight:bold">&lt;successThreshold&gt;</span>0<span style="color:#6ab825;font-weight:bold">&lt;/successThreshold&gt;</span>
+                  <span style="color:#6ab825;font-weight:bold">&lt;/livenessProbe&gt;</span>
+                <span style="color:#6ab825;font-weight:bold">&lt;/org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;/containers&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;envVars/&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;annotations/&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;imagePullSecrets/&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;nodeProperties/&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;yaml&gt;&lt;/yaml&gt;</span>
+              <span style="color:#6ab825;font-weight:bold">&lt;podRetention</span> <span style="color:#bbb">class=</span><span style="color:#ed9d13">&#34;org.csanchez.jenkins.plugins.kubernetes.pod.retention.Default&#34;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span>
+            <span style="color:#6ab825;font-weight:bold">&lt;/org.csanchez.jenkins.plugins.kubernetes.PodTemplate&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;/templates&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;serverUrl&gt;</span>https://kubeapiserverIP:6443<span style="color:#6ab825;font-weight:bold">&lt;/serverUrl&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;serverCertificate&gt;</span> Paste your kubectl user certificate here; not the CA cert but the cert for your user.<span style="color:#6ab825;font-weight:bold">&lt;/serverCertificate&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;skipTlsVerify&gt;</span>true<span style="color:#6ab825;font-weight:bold">&lt;/skipTlsVerify&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;addMasterProxyEnvVars&gt;</span>false<span style="color:#6ab825;font-weight:bold">&lt;/addMasterProxyEnvVars&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;capOnlyOnAlivePods&gt;</span>false<span style="color:#6ab825;font-weight:bold">&lt;/capOnlyOnAlivePods&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;namespace&gt;</span>jenkins<span style="color:#6ab825;font-weight:bold">&lt;/namespace&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;jenkinsUrl&gt;</span>https://yourjenkinsurl<span style="color:#6ab825;font-weight:bold">&lt;/jenkinsUrl&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;credentialsId&gt;</span>kubeconfig<span style="color:#6ab825;font-weight:bold">&lt;/credentialsId&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;containerCap&gt;</span>10<span style="color:#6ab825;font-weight:bold">&lt;/containerCap&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;retentionTimeout&gt;</span>5<span style="color:#6ab825;font-weight:bold">&lt;/retentionTimeout&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;connectTimeout&gt;</span>5<span style="color:#6ab825;font-weight:bold">&lt;/connectTimeout&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;readTimeout&gt;</span>15<span style="color:#6ab825;font-weight:bold">&lt;/readTimeout&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;usageRestricted&gt;</span>false<span style="color:#6ab825;font-weight:bold">&lt;/usageRestricted&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;maxRequestsPerHost&gt;</span>32<span style="color:#6ab825;font-weight:bold">&lt;/maxRequestsPerHost&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;waitForPodSec&gt;</span>600<span style="color:#6ab825;font-weight:bold">&lt;/waitForPodSec&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;podRetention</span> <span style="color:#bbb">class=</span><span style="color:#ed9d13">&#34;org.csanchez.jenkins.plugins.kubernetes.pod.retention.Never&#34;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span>
+        <span style="color:#6ab825;font-weight:bold">&lt;/org.csanchez.jenkins.plugins.kubernetes.KubernetesCloud&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;/clouds&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;quietPeriod&gt;</span>5<span style="color:#6ab825;font-weight:bold">&lt;/quietPeriod&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;scmCheckoutRetryCount&gt;</span>0<span style="color:#6ab825;font-weight:bold">&lt;/scmCheckoutRetryCount&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;views&gt;</span>
+        <span style="color:#6ab825;font-weight:bold">&lt;hudson.model.AllView&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;owner</span> <span style="color:#bbb">class=</span><span style="color:#ed9d13">&#34;hudson&#34;</span> <span style="color:#bbb">reference=</span><span style="color:#ed9d13">&#34;../../..&#34;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;name&gt;</span>all<span style="color:#6ab825;font-weight:bold">&lt;/name&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;filterExecutors&gt;</span>false<span style="color:#6ab825;font-weight:bold">&lt;/filterExecutors&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;filterQueue&gt;</span>false<span style="color:#6ab825;font-weight:bold">&lt;/filterQueue&gt;</span>
+          <span style="color:#6ab825;font-weight:bold">&lt;properties</span> <span style="color:#bbb">class=</span><span style="color:#ed9d13">&#34;hudson.model.View$PropertyList&#34;</span><span style="color:#6ab825;font-weight:bold">/&gt;</span>
+        <span style="color:#6ab825;font-weight:bold">&lt;/hudson.model.AllView&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;/views&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;primaryView&gt;</span>all<span style="color:#6ab825;font-weight:bold">&lt;/primaryView&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;slaveAgentPort&gt;</span>50000<span style="color:#6ab825;font-weight:bold">&lt;/slaveAgentPort&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;label&gt;&lt;/label&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;nodeProperties/&gt;</span>
+      <span style="color:#6ab825;font-weight:bold">&lt;globalNodeProperties/&gt;</span></code></pre></div>
+<p>Wow that&rsquo;s long! Pay particular attention to &lt;serverUrl&gt; and &lt;serverCertificate&gt; and &lt;jenkinsURL&gt; tags as these need to be custom for this configmap to work properly. Other noteworthy aspects of this config are:</p>
+
+<ul>
+<li>security is enabled (sign up allowed)</li>
+<li>Your kubernetes cluster and pod template are already in place</li>
+<li>We have allowed jenkins to use 4 executors by default</li>
+<li>Your jenkins version may be different, check the &lt;version&gt; tag at the top</li>
+</ul>
+
+<p>All that is left for you to do is apply the files. <strong>In case you copy and pasted the above configmap, note that you need to edit sections of the configmap for your own cluster!</strong></p>
+
+<p>Issue:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">~$ kubectl apply -f service.yaml configmap.yaml resolv-conf.yaml deployment.yaml -n jenkins</pre></div>
+<p>Apply an ingress or use a loadbalancer or nodeport to access your new jenkins server.</p>
+
+<h3 id="create-some-jobs-in-jenkins">Create some jobs in jenkins</h3>
+
+<hr />
+
+<p>-<img src="https://nerdrack.com/posts/hugo-cicd/images/jenkins-1.png"></img>
+Log into Jenkins and go to the Dashboard. Select <em>New Item</em> in the top left hand corner.</p>
+
+<p><img src="https://nerdrack.com/posts/hugo-cicd/images/jenkins-2.png"></img>
+Enter a title for your new job and select it as a freestyle project.</p>
+
+<p><img src="https://nerdrack.com/posts/hugo-cicd/images/jenkins-3.png"></img>
+Give your job a short description and select <em>Discard old builds</em>. Scroll down to Source Code Management.</p>
+
+<p><img src="https://nerdrack.com/posts/hugo-cicd/images/jenkins-4.png"></img>
+Enter your repo&rsquo;s url and create a user/pass key to authenticate with. Inside of Build Triggers, select <em>Build when a change is pushed to Gogs</em>.</p>
+
+<p><img src="https://nerdrack.com/posts/hugo-cicd/images/jenkins-5.png"></img>
+Under Build, open the dropdown menu and select <em>hugo builder</em>. For Post Build Actions, open the dropdown:</p>
+
+<ul>
+<li>Select <em>Build another Project</em></li>
+<li>enter the name of the next project you will be creating (i.e deploy hugo)</li>
+<li>select <em>trigger only if build is stable</em></li>
+<li>save the project</li>
+</ul>
+
+<p><img src="https://nerdrack.com/posts/hugo-cicd/images/jenkins-6.png"></img>
+Create a second project using the name you entered into the final step of the last project. This will also be a frestyle project.</p>
+
+<p><img src="https://nerdrack.com/posts/hugo-cicd/images/jenkins-7.png"></img>
+Enter a short description and select discard old builds.</p>
+
+<p><img src="https://nerdrack.com/posts/hugo-cicd/images/jenkins-8.png"></img>
+Under Build Triggers, select <em>Build after another Project is built</em>. Then specify the name of the last project; select <em>Trigger only if build is stable</em>. Scroll down to your Build Environment and select <em>Setup Kubernetes CLI (kubectl)</em>.</p>
+
+<p>Now enter your kubernetes-api endpoint (i.e <a href="https://127.0.0.1:6443">https://127.0.0.1:6443</a>). <em>If you aren&rsquo;t sure, look inside of your ~/.kube/config.</em> This file also has the certificate authority&rsquo;s certificate inside of it. Enter the CA&rsquo;s certificate below the endpoint.</p>
+
+<p><img src="https://nerdrack.com/posts/hugo-cicd/images/jenkins-9.png"></img>
+Underneath Build, select <em>Execute Shell</em> and enter:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">kubectl -n hugo delete po $(kubectl get po -n hugo | grep hugo | cut -d&#39; &#39; -f1);</pre></div>
+<p>This grabs the pod name inside of the hugo namespace and deletes it. The thought behind this is that our replicationset will then create another pod to take its place; effectively forcing an update to your website. Save the project.</p>
+
+<p>Now we need to setup webhooks inside of our git repo. For gitea, the url will be as such:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">https://yourjenkinsurl.com/gogs-webhook/?job=your_build_hugo_job_name</pre></div>
+<h3 id="deploy-hugo-on-kubernetes">Deploy hugo on kubernetes</h3>
+
+<p>It is possible to deploy custom images to your kubernetes cluster, all you need to do is specify some credentials for kubernetes to use to access your docker images.</p>
+
+<p><strong>regcred.yaml</strong></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#666"> </span>v1<span style="color:#666">
+</span><span style="color:#666"></span>kind:<span style="color:#666"> </span>Secret<span style="color:#666">
+</span><span style="color:#666"></span>metadata:<span style="color:#666">
+</span><span style="color:#666">  </span>name:<span style="color:#666"> </span>regcred<span style="color:#666">
+</span><span style="color:#666"></span>type:<span style="color:#666"> </span>Opaque<span style="color:#666">
+</span><span style="color:#666"></span>data:<span style="color:#666">
+</span><span style="color:#666">  </span>username:<span style="color:#666"> </span>&lt;your<span style="color:#666"> </span>base64<span style="color:#666"> </span>encoded<span style="color:#666"> </span>docker<span style="color:#666"> </span>username<span style="color:#ed9d13">&gt;
+</span><span style="color:#ed9d13">  password: &lt;your base64 encoded docker password&gt;</span><span style="color:#666">
+</span><span style="color:#666">  </span>email:<span style="color:#666"> </span>&lt;your<span style="color:#666"> </span>base64<span style="color:#666"> </span>encoded<span style="color:#666"> </span>docker<span style="color:#666"> </span>email&gt;</code></pre></div>
+<p>To encode your password to base64, issue:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">$ echo password | base64
+cGFzc3dvcmQK
+$</pre></div>
+<p>Pushing your credentials to a cluster in the wild is a bold move cotton; however, don&rsquo;t frett! Your communications through kubectl should be encrypted with an SSL certificate and etcd is where secrets are stored inside of a cluster. Etcd does not allow someone to display the content of a secret even if they use kubectl to describe the secret. Let&rsquo;s apply these to our cluster:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4">~$ kubectl apply -f regcred.yaml -n hugo</pre></div>
+<p>Okay, with the foundations laid we can finally start running hugo. Here&rsquo;s some manifests:</p>
+
+<p><strong>service.yaml</strong></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">kind:<span style="color:#666"> </span>Service<span style="color:#666">
+</span><span style="color:#666"></span>apiVersion:<span style="color:#666"> </span>v1<span style="color:#666">
+</span><span style="color:#666"></span>metadata:<span style="color:#666">
+</span><span style="color:#666">  </span>name:<span style="color:#666"> </span>hugo<span style="color:#666">
+</span><span style="color:#666"></span>spec:<span style="color:#666">
+</span><span style="color:#666">  </span>selector:<span style="color:#666">
+</span><span style="color:#666">    </span>app:<span style="color:#666"> </span>hugo<span style="color:#666">
+</span><span style="color:#666">  </span>ports:<span style="color:#666">
+</span><span style="color:#666">  </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>hugo<span style="color:#666">
+</span><span style="color:#666">    </span>port:<span style="color:#666"> </span><span style="color:#3677a9">443</span><span style="color:#666">
+</span><span style="color:#666">    </span>targetPort:<span style="color:#666"> </span><span style="color:#3677a9">443</span></code></pre></div>
+<p>After applying this manifest you will have a clusterIP service running inside of the hugo namespace. Use an ingress to route traffic to your service; <em>or</em> make the service into a nodePort and access the content from there. I would recommend creating an nginx ingress controller inside of your cluster to route traffic behind a load balancer. (Read <strong><a href="https://nerdrack.com/posts/ingress-controller">this post</a></strong> if you&rsquo;d like to setup an ingress controller)</p>
+
+<p><strong>deployment.yaml</strong></p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion:<span style="color:#666"> </span>extensions/v1beta1<span style="color:#666">
+</span><span style="color:#666"></span>kind:<span style="color:#666"> </span>Deployment<span style="color:#666">
+</span><span style="color:#666"></span>metadata:<span style="color:#666">
+</span><span style="color:#666">  </span>name:<span style="color:#666"> </span>hugo<span style="color:#666">
+</span><span style="color:#666"></span>spec:<span style="color:#666">
+</span><span style="color:#666">  </span>replicas:<span style="color:#666"> </span><span style="color:#3677a9">1</span><span style="color:#666">
+</span><span style="color:#666">  </span>template:<span style="color:#666">
+</span><span style="color:#666">    </span>metadata:<span style="color:#666">
+</span><span style="color:#666">      </span>labels:<span style="color:#666">
+</span><span style="color:#666">        </span>app:<span style="color:#666"> </span>hugo<span style="color:#666">
+</span><span style="color:#666">    </span>spec:<span style="color:#666">
+</span><span style="color:#666">      </span>initContainers:<span style="color:#666">
+</span><span style="color:#666">      </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>alpine-git<span style="color:#666">
+</span><span style="color:#666">        </span>image:<span style="color:#666"> </span>&lt;docker<span style="color:#666"> </span>user&gt;/alpine-git:latest<span style="color:#666">
+</span><span style="color:#666">        </span>imagePullPolicy:<span style="color:#666"> </span>Always<span style="color:#666">
+</span><span style="color:#666">        </span>command:<span style="color:#666"> </span>[<span style="color:#ed9d13">&#34;/bin/sh&#34;</span>]<span style="color:#666">
+</span><span style="color:#666">        </span><span style="color:#999;font-style:italic"># due to alpine using muslc instead of glibc, outward dns resolution does not happen properly by default.</span><span style="color:#666">
+</span><span style="color:#666">        </span><span style="color:#999;font-style:italic"># if you want your git image to be able to reach outside the cluster you should overwrite the contents of /etc/resolv.conf</span><span style="color:#666">
+</span><span style="color:#666">        </span>args:<span style="color:#666"> </span>[<span style="color:#ed9d13">&#34;-c&#34;</span>,<span style="color:#666"> </span><span style="color:#ed9d13">&#34;echo &#39;nameserver 8.8.8.8&#39; &gt; /etc/resolv.conf &amp;&amp; git clone https://&lt;your github repo&gt; /tmp/src/hugo&#34;</span>]<span style="color:#666">
+</span><span style="color:#666">        </span>volumeMounts:<span style="color:#666">
+</span><span style="color:#666">        </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>source-content<span style="color:#666">
+</span><span style="color:#666">          </span>mountPath:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;/tmp/src&#34;</span><span style="color:#666">
+</span><span style="color:#666">      </span>imagePullSecrets:<span style="color:#666">
+</span><span style="color:#666">      </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>regcred<span style="color:#666">
+</span><span style="color:#666">      </span>containers:<span style="color:#666">
+</span><span style="color:#666">      </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>hugo<span style="color:#666">
+</span><span style="color:#666">        </span>image:<span style="color:#666"> </span>&lt;docker<span style="color:#666"> </span>user&gt;/hugo:latest<span style="color:#666">
+</span><span style="color:#666">        </span>imagePullPolicy:<span style="color:#666"> </span>IfNotPresent<span style="color:#666">
+</span><span style="color:#666">        </span>ports:<span style="color:#666">
+</span><span style="color:#666">        </span>-<span style="color:#666"> </span>containerPort:<span style="color:#666"> </span><span style="color:#3677a9">443</span><span style="color:#666">
+</span><span style="color:#666">        </span>command:<span style="color:#666"> </span>[<span style="color:#ed9d13">&#34;hugo&#34;</span>]<span style="color:#666">
+</span><span style="color:#666">        </span>args:<span style="color:#666"> </span>[<span style="color:#ed9d13">&#34;server&#34;</span>,<span style="color:#666"> </span><span style="color:#ed9d13">&#34;-p=443&#34;</span>,<span style="color:#666"> </span><span style="color:#ed9d13">&#34;--bind=0.0.0.0&#34;</span>,<span style="color:#666"> </span><span style="color:#ed9d13">&#34;--baseUrl=https://&lt;your domain name&gt;&#34;</span>,<span style="color:#666"> </span><span style="color:#ed9d13">&#34;-s=/tmp/src/hugo/&#34;</span>]<span style="color:#666">
+</span><span style="color:#666">        </span>volumeMounts:<span style="color:#666">
+</span><span style="color:#666">        </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>source-content<span style="color:#666">
+</span><span style="color:#666">          </span>mountPath:<span style="color:#666"> </span><span style="color:#ed9d13">&#34;/tmp/src&#34;</span><span style="color:#666">
+</span><span style="color:#666">      </span>imagePullSecrets:<span style="color:#666">
+</span><span style="color:#666">      </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>regcred<span style="color:#666">
+</span><span style="color:#666">      </span>volumes:<span style="color:#666">
+</span><span style="color:#666">      </span>-<span style="color:#666"> </span>name:<span style="color:#666"> </span>source-content<span style="color:#666">
+</span><span style="color:#666">        </span>emptyDir:<span style="color:#666"> </span>{}</code></pre></div>
+<p>This manifest will connect to dockerhub and pull in the images we just created. Note that you must have regcred.yaml applied inside of the namespace you&rsquo;re using for this to work! We create an initContainer with the alpine-git image. &ldquo;alpine-git&rdquo; clones the repository that will contain our hugo code into an emptyDir; the emptyDir is then mounted inside of the final hugo container.</p>
+
+<p>initContainers run before the actual container, making it incredibly useful for this situation. Next, we create a container to run hugo for us. <strong>Note that you must include &ndash;baseUrl if you plan on using https or your site will have mixed content and will not properly load in most browsers.</strong></p>
+
+<p>For the brevity of this post, I will assume your traffic is being routed properly to your services. If you would like to create an ingress controller for your cluster, follow <a href="https://nerdrack.com/ingress-controller">this post</a>.</p>
+
+<p>Watch as everything comes together:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">$ kubectl apply -f service.yaml deployment.yaml -n hugo</code></pre></div>
+<h3 id="profit">Profit</h3>
+
+<hr />
+
+<p>Now that we&rsquo;ve gone through this incredibly intricate process of setting up a ci/cd pipeline with kubernetes, hugo, gitea, and jenkins we should be happy that we&rsquo;ll never have to do that again!</p>
+
+<p>Now the only things necessary for an update to your awesome blog should be a simple push to your git repo and then a short (about 1 minute) wait. I have tried to cover everything I could while remaining relatively brief in the description of what&rsquo;s happening. If you&rsquo;ve noticed an error or would like further explanation, please <strong><a href="mailto:mfish551.mf@gmail.com">email me</a></strong> or leave a comment.</p>
+
+        </div>
+        
+  <div class="sharing">
+    
+    <a href="mailto:mfish551.mf@gmail.com" class="envelope" title="">
+                  <span class="fa fa-envelope"></span></a>
+    
+    <a href="#!" class="linkedin" title="test">
+                  <span class="fa fa-linkedin"></span></a>
+    
+    <a href="https://git.nerdrack.com" class="git" title="we host our own repos">
+                  <span class="fa fa-git"></span></a>
+    
+  </div>
+
+
+        
+
+
+<div id="disqus_thread"></div>
+
+<script type="text/javascript">
+  var disqusUsername = "nerdrack.com";
+
+  (function() { 
+  var d = document, s = d.createElement('script');
+
+  s.src = '//' + disqusUsername + '.disqus.com/embed.js';
+
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+      </div>
+    </div>
+
+  </body>
+  <script src="https://nerdrack.com//js/toc.js"></script>
+
+</html>

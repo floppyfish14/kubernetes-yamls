@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gitea
+  annotations:
+      kubernetes.io/ingress.class: nginx
+      nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  tls:
+  - hosts:
+    - git.safesecs.io
+    secretName: ingress-secrets
+  rules:
+  - host: git.safesecs.io 
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: gitea-web
+          servicePort: 6443 
+      - backend:
+          serviceName: gitea-ssh
+          servicePort: 2222
+      - backend:
+          serviceName: gitea-letsencrypt
+          servicePort: 8080

@@ -1,0 +1,10 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: gitwebhook
+  namespace: default
+spec:
+  template:
+    spec:
+      container:
+              image: "scher200/gitea-webhook"

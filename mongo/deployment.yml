@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-db-deployment
+spec:
+  selector:
+    matchLabels:
+      app: user-db-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: user-db-app
+    spec:
+      containers:
+        - name: mongo
+          image: mongo:3.6.4
+          command:
+            - mongod
+            - "--bind_ip_all"
+            - "--directoryperdb"
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - name: data
+              mountPath: /data/db
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: static-persistence-volume-claim-mongo

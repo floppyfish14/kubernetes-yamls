@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: matomo
+  labels:
+    app: matomo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: matomo
+  strategy:
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      name: matomo
+      labels:
+        app: matomo
+    spec:
+      containers:
+      - name: matomo
+        image: bitnami/matomo:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: matomo-web
+        - containerPort: 6443
+          name: matomo-ssl
+        volumeMounts:
+        - name: matomo-config
+          mountPath: /var/www/html/config
+      volumes:
+      - name: matomo-config
+        persistentVolumeClaim:
+          claimName: matomo-config-pvc

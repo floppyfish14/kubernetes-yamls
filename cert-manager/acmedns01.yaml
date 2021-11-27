@@ -1,0 +1,16 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: nerdrack-tls
+spec:
+  secretName: nerdrack-tls
+  issuerRef:
+    name: letsencrypt-dns-staging
+    kind: ClusterIssuer
+  commonName: '*.nerdrack.com'
+  acme:
+    config:
+    - dns01:
+        provider: cloud-dns-provider
+      domains:
+      - '*.nerdrack.com'

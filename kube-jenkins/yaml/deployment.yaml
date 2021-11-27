@@ -1,0 +1,49 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jenkins
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jenkins
+    spec:
+      initContainers:
+      - name: init-disk
+        image: busybox:latest
+        command: ["/bin/sh"]
+        args: ["-c", "chown -R 1000:1000 /var/jenkins_home"]
+        volumeMounts:
+        - name: jenkins-home
+          mountPath: /var/jenkins_home
+          readOnly: false
+      containers:
+      - name: jenkins
+        image: da3dalus/kube-jenkins:2.190.1
+        imagePullPolicy: Always
+        env:
+          - name: JAVA_OPTS
+            value: -Djenkins.install.runSetupWizard=false
+        ports:
+        - name: jenkins-http
+          containerPort: 8080
+        - name: jnlp-port
+          containerPort: 50000
+        volumeMounts:
+        - name: jenkins-home
+          mountPath: /var/jenkins_home
+       #volumeMounts:
+       #- name: resolv-conf
+       #  mountPath: /etc/resolv.conf
+       #  subPath: resolv.conf
+      imagePullSecrets:
+      - name: regcred
+      volumes:
+      - name: jenkins-home
+        persistentVolumeClaim:
+          claimName: jenkins-home
+     #- name: resolv-conf
+     #   configMap:
+     #     name: resolv-conf
+     #

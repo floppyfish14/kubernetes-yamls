@@ -1,0 +1,22 @@
+    {{ partial "head.html" . }}
+    <body>
+        {{ partial "sidebar.html" . }}
+        <div class="content-wrapper">
+            <div class="content-wrapper__inner">
+                <section id="main">
+                    <div>
+                        {{ range first 10 ( where .Site.RegularPages "Type" "post") }}
+                                {{ .Render "summary"}}
+                        {{ end }}
+                    </div>
+                    </br>
+                    <h4>
+                        <a href="{{ .Site.BaseURL }}/posts/">Archive</a>
+                    </h4>
+                </section>
+            </div>
+        </div>
+        {{ partial "footer.html" .}}
+        {{ partial "script.html" .}}
+    </body>
+</html>

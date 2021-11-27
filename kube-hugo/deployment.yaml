@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hugo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hugo
+    spec:
+      initContainers:
+      - name: alpine-git
+        image: da3dalus/alpine-git:latest
+        imagePullPolicy: Always
+        command: ["/bin/sh"]
+        args: ["-c", "echo 'nameserver 8.8.8.8' > /etc/resolv.conf && git -c http.sslVerify=false clone https://git.safesecs.io:443/da3dalus/safesecs-hugo.git /tmp/src/safesecs-hugo"] 
+        volumeMounts:
+        - name: source-content
+          mountPath: "/tmp/src"
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - name: hugo
+        image: da3dalus/hugo:test
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 1776
+        command: ["hugo"]
+        args: ["server", "-p=1776", "--bind=0.0.0.0", "--source=/tmp/src/safesecs-hugo/"]
+        volumeMounts:
+        - name: source-content
+          mountPath: "/tmp/src/"
+      imagePullSecrets:
+      - name: regcred
+      volumes:
+      - name: source-content
+        emptyDir: {}

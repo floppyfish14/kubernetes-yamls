@@ -1,0 +1,69 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress-mysql
+  labels:
+    app: wordpress-mysql
+spec:
+  ports:
+    - port: 3306
+  selector:
+    app: wordpress-mysql
+  clusterIP: None
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pv-claim
+  labels:
+    app: wordpress
+spec:
+  accessModes:
+    - ReadWriteOnce
+    - ReadOnlyMany
+  storageClassName: ssd-save
+  resources:
+    requests:
+      storage: 20Gi
+---
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: wordpress-mysql
+  labels:
+    app: wordpress-mysql
+spec:
+  selector:
+    matchLabels:
+      app: wordpress-mysql
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: wordpress-mysql
+    spec:
+      hostname: wordpress-mysql
+      containers:
+      - image: mysql:5.7
+        name: mysql
+        env:
+        - name: MYSQL_ALLOW_EMPTY_PASSWORD
+          value: "1"
+        ports:
+        - containerPort: 3306
+          name: mysql
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+          subPath: mysql
+        - name: mysql-conf
+          mountPath: /etc/mysql/conf.d/bind.cnf
+          subPath: bind.cnf
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-pv-claim
+      - name: mysql-conf
+        configMap:
+          name: mysql
